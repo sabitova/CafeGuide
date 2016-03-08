@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CafeGuide
 {
-    class Address
+    public class Address
     {
         public int Id { get; set; }
         public string Text { get; set; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CafeGuide
 {
-    class RepoProcessing : IProcessing
+    public class RepoProcessing : IProcessing
     {
         List<Cafe> Cafes = new List<Cafe>();
 
@@ -78,13 +78,22 @@ namespace CafeGuide
             Cafes.Add(Cafe2);
         }
 
-        public List<Cafe> GetSuitableCafes(int seconds)
+        public List<Cafe> GetSuitableCafes(int time)
         {
+            var address3 = new Address
+            {
+                Id = 3,
+                Text = "Krasnaya pl., d. 1",
+                Lat = "55.7537523",
+                Long = "37.62251679999997"
+            };
+
             var SuitableCafes = new List<Cafe>();
 
             foreach (var c in Cafes)
             {
-
+                if (APIDirection.GetTime(address3, c.Address) < time * 60)
+                    SuitableCafes.Add(c);
             }
 
             return SuitableCafes;
