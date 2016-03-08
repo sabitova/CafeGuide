@@ -69,6 +69,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Context.cs" />
+    <Compile Include="IProcessing.cs" />
+    <Compile Include="RepoProcessing.cs" />
     <Compile Include="Type.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
