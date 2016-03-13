@@ -8,7 +8,7 @@ namespace CafeGuide
 {
     public class RepoProcessing : IProcessing
     {
-        List<Cafe> Cafes = new List<Cafe>();
+        public List<Cafe> Cafes = new List<Cafe>();
 
         public void AddEntities()
         {

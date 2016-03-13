@@ -22,11 +22,18 @@ namespace CafeGuide
     {
         public MainWindow()
         {
+
             InitializeComponent();
 
-            var rp = new RepoProcessing();
-            rp.AddEntities();
-            List<Cafe> SuitableCafes = rp.GetSuitableCafes(10);
+        }
+
+        private void buttonSearch_Click(object sender, RoutedEventArgs e)
+        {
+
+            ResultList showResults = new ResultList();
+            showResults.ShowDialog();
+
+
         }
     }
 }
