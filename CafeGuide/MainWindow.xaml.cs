@@ -24,6 +24,22 @@ namespace CafeGuide
         {
 
             InitializeComponent();
+            comboBoxType.Items.Add("cafe");
+            comboBoxType.Items.Add("restaurant");
+            comboBoxType.Items.Add("bar");
+            comboBoxType.Items.Add("coffehouse");
+            comboBoxType.Items.Add("anticafe");                                   
+            comboBoxType.Items.Add("fastfood");
+
+            comboBoxCuisine.Items.Add("american");
+            comboBoxCuisine.Items.Add("chinese");
+            comboBoxCuisine.Items.Add("european");
+            comboBoxCuisine.Items.Add("georgian");
+            comboBoxCuisine.Items.Add("italian");
+            comboBoxCuisine.Items.Add("japanese");
+            comboBoxCuisine.Items.Add("russian");
+
+
 
         }
 

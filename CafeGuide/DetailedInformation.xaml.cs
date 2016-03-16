@@ -27,27 +27,15 @@ namespace CafeGuide
             Cafe cafe = ShowInfo(name);
 
             textBlock_Name.Text = cafe.Name;
-            listBox_Features.Items.Add("Address");
-            listBox_Features.Items.Add("Type");
-            listBox_Features.Items.Add("Cuisine");
-            listBox_Features.Items.Add("Opening Hours");
-            listBox_Features.Items.Add("Average Check");
-            listBox_Features.Items.Add("Wi-Fi");
-            listBox_Features.Items.Add("Website");
-            listBox_Features.Items.Add("Phone Number");
-
-            listBox_Info.Items.Add(cafe.Address.Text);
-            listBox_Info.Items.Add(cafe.Type.Name);
-            listBox_Info.Items.Add(cafe.Cuisine[0].Name);
-            listBox_Info.Items.Add(cafe.OpeningTime.Hour +":"+ cafe.OpeningTime.Minute+ "-"+ cafe.ClosingTime.Hour+"-" + cafe.ClosingTime.Minute);
+            textBlock_Address.Text = cafe.Address.Text;
+            textBlock_AverageCheck.Text = cafe.CheckAvg.ToString()+" rub";
+            textBlock_Cuisine.Text = cafe.Cuisine[0].Name;
+            textBlock_Type.Text = cafe.Type.Name;
+            textBlock_OpeningHours.Text = cafe.OpeningTime.TimeOfDay.ToString() + "-" + cafe.ClosingTime.TimeOfDay.ToString();
             if (cafe.WiFi == true)
-                listBox_Info.Items.Add("Yes");
-            else listBox_Info.Items.Add("No");
-            listBox_Info.Items.Add(cafe.Website);
-            listBox_Info.Items.Add(cafe.PhoneNumber);
-
-
-
+                textBlock_Wi_Fi.Text = "Wi-Fi";
+            textBlock_Website.Text = cafe.Website;
+            textBlock_Phone.Text = cafe.PhoneNumber;
 
         }
 
@@ -65,6 +53,13 @@ namespace CafeGuide
                 }              
             }
             return selectedCafe;
+
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            Map map = new Map();
+            map.ShowDialog();
 
         }
     }

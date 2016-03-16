@@ -27,7 +27,8 @@ namespace CafeGuide
         public class Item
         { 
             public string Name { get; set; }
-            public string Address { get; set; }
+            public DateTime Time { get; set; }
+            public double AvgCheck { get; set; }
         }
 
         public ResultList()
@@ -38,21 +39,23 @@ namespace CafeGuide
             c1.Header = "Name";
             c1.Binding = new Binding("Name");
             dataGrid_Results.Columns.Add(c1);
+
             DataGridTextColumn c2 = new DataGridTextColumn();
-            c2.Header = "Address";
-            c2.Binding = new Binding("Address");
+            c2.Header = "Time";
+            //c2.Binding = new Binding("Time");
             dataGrid_Results.Columns.Add(c2);
-            DataGridTextColumn c4 = new DataGridTextColumn();
-            c4.Header = "Time";
-            c4.Binding = new Binding("Time");
-            dataGrid_Results.Columns.Add(c4);
+
+            DataGridTextColumn c3 = new DataGridTextColumn();
+            c3.Header = "Average Check";
+            c3.Binding = new Binding("CheckAvg");
+            dataGrid_Results.Columns.Add(c3);
 
             RepoProcessing obj = new RepoProcessing();
             obj.AddEntities();
             suitableCafes = obj.GetSuitableCafes(60);
             foreach (var c in suitableCafes)
             {
-                dataGrid_Results.Items.Add(new Item { Name = c.Name, Address = c.Address.Text});
+                dataGrid_Results.Items.Add(new Item { Name = c.Name, AvgCheck = c.CheckAvg});
             }
 
         }

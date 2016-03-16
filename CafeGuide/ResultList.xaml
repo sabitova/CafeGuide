@@ -7,15 +7,13 @@
         mc:Ignorable="d"
         Title="Result" MaxHeight="350" MaxWidth="525" Height="350" Width="525">
     <Grid>
-        <Grid.Background>
-            <ImageBrush ImageSource="Resources/2.1.jpg" Stretch="Uniform"/>
-        </Grid.Background>
+
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="7*"/>
             <ColumnDefinition Width="510*"/>
         </Grid.ColumnDefinitions>
-        <DataGrid x:Name="dataGrid_Results" Grid.Column="1" AutoGenerateColumns="False" IsReadOnly="True" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top" Height="284" Width="480"  FontFamily="Segoe Print" Foreground="#FF151313" Background="{x:Null}" BorderBrush="{x:Null}" SelectionChanged="dataGrid_Results_SelectionChanged">
+        <DataGrid x:Name="dataGrid_Results" Grid.Column="1" AutoGenerateColumns="False" IsReadOnly="True" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top" Height="284" Width="480"  FontFamily="Segoe Print" Foreground="#FF151313" BorderBrush="Black" SelectionChanged="dataGrid_Results_SelectionChanged" Background="{x:Null}">
             <!--<DataGrid.Columns>
                 <DataGridTextColumn Header="Name" ></DataGridTextColumn>
                 <DataGridTextColumn Header="Address"></DataGridTextColumn>
