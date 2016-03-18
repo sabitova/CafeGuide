@@ -14,12 +14,14 @@
             <RowDefinition Height="217*"/>
         </Grid.RowDefinitions>
         <Label x:Name="label" Content="Cafe Guide" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" FontStyle="Italic" FontFamily="Segoe Print" FontSize="26.667" Height="57" Margin="59,0,0,0" Grid.RowSpan="2"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="10,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="256" Grid.Row="2"/>
+        <TextBox x:Name="textBox_Street" HorizontalAlignment="Left" Height="23" Margin="10,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" Grid.Row="2"/>
         <Grid Grid.RowSpan="4">
             <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="10,112,0,0" TextWrapping="Wrap" Text="Enter your location" VerticalAlignment="Top" FontFamily="Segoe Print" FontSize="10.667"/>
             <Button x:Name="button_OnFoot" Content="On foot" HorizontalAlignment="Left" Margin="101,188,0,0" VerticalAlignment="Top" Width="74" Height="63" Click="button_OnFoot_Click"/>
             <Button x:Name="button_PublicTransport" Content="Public&#xD;&#xA;Transport&#xD;&#xA;" HorizontalAlignment="Left" Margin="193,188,0,0" VerticalAlignment="Top" Width="74" Height="63" Click="button_PublicTransport_Click"/>
             <Button x:Name="button_Car" Content="Car" HorizontalAlignment="Left" Margin="10,188,0,0" VerticalAlignment="Top" Width="74" Height="63" Click="button_Car_Click"/>
+            <Image x:Name="image_1" HorizontalAlignment="Left" Height="100" Margin="85,265,0,0" VerticalAlignment="Top" Width="100"/>
+            <TextBox x:Name="textBox_House" HorizontalAlignment="Left" Height="23" Margin="215,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52"/>
 
         </Grid>
 

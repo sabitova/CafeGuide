@@ -19,19 +19,29 @@ namespace CafeGuide
     /// </summary>
     public partial class StartWindow : Window
     {
-        public event Action<string> CarIsClicked;
-        public event Action<string> OnFootIsClicked;
-        public event Action<string> TransportIsClicked;
 
         public StartWindow()
         {
             InitializeComponent();
+          
+            var uriImageSource = new Uri(@"https://maps.googleapis.com/maps/api/place/photo?photoreference={0}=AIzaSyAYiHyxfoRT-Z5tlEUesao7cr53lln_y7Q", UriKind.RelativeOrAbsolute);
+            image_1.Source = new BitmapImage(uriImageSource);
+
         }
 
         private void button_Car_Click(object sender, RoutedEventArgs e)
         {
-            if (CarIsClicked != null)
-                CarIsClicked("driving");
+            Address location = new Address();
+            location.Text = textBox_Street.Text + textBox_House.Text;
+
+            RepoProcessing repo = new RepoProcessing();
+            repo.AddEntities();
+
+            foreach (var cafe in repo.Cafes)
+            {
+                cafe.TimeToGet=APIDirection.GetTime(location, cafe.Address, "driving");
+            }
+                       
             MainWindow mainWindow = new MainWindow();
             mainWindow.ShowDialog();
             
@@ -39,16 +49,32 @@ namespace CafeGuide
 
         private void button_OnFoot_Click(object sender, RoutedEventArgs e)
         {
-            if (OnFootIsClicked != null)
-                OnFootIsClicked("walking");
+
+            Address location = new Address();
+            location.Text = textBox_Street.Text + textBox_House.Text;
+
+            RepoProcessing repo = new RepoProcessing();
+            repo.AddEntities();
+
+            foreach (var cafe in repo.Cafes)
+            {               
+                cafe.TimeToGet = APIDirection.GetTime(location, cafe.Address, "walking");
+            }
             MainWindow mainWindow = new MainWindow();
             mainWindow.ShowDialog();
         }
 
         private void button_PublicTransport_Click(object sender, RoutedEventArgs e)
         {
-            if (TransportIsClicked != null)
-                TransportIsClicked("transit");
+            Address location = new Address();
+            location.Text = textBox_Street.Text + textBox_House.Text;
+
+            RepoProcessing repo = new RepoProcessing();
+            repo.AddEntities();
+            foreach (var cafe in repo.Cafes)
+            {
+                cafe.TimeToGet = APIDirection.GetTime(location, cafe.Address, "transit");
+            }
             MainWindow mainWindow = new MainWindow();
             mainWindow.ShowDialog();
         }
