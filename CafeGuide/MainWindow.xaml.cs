@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data.Entity;
-using System.Data.OleDb;
+using System.Data.SqlClient;
 
 namespace CafeGuide
 {
@@ -29,14 +29,25 @@ namespace CafeGuide
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            using (OleDbConnection conn = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\Documents\Учеба\Прога\Team project\Database.accdb;"))
+            string s = "";
+
+            using (SqlConnection connection = new SqlConnection(@"Data Source = DESKTOP-RE0AOSG; AttachDbFileName=C:\Program Files\Microsoft SQL Server\MSSQL12.MSSQLSERVER\MSSQL\DATA\TestDB1.mdf; Integrated Security = True"))
             {
-                OleDbCommand c = new OleDbCommand("SELECT * FROM Cafes", conn);
-                conn.Open();
-                OleDbDataReader oledb = c.ExecuteReader();
-                string s = oledb.GetName(0) + "\t" + oledb.GetName(1);
-                conn.Close();
+                connection.Open();
+                using (var command = new SqlCommand("select * from Cafe", connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            s += string.Format("{0} {1} {2}",
+                            reader.GetInt32(0), reader.GetString(1), reader.GetInt32(2));
+                        }
+                    }
+                }
             }
+
+            MessageBox.Show(s);
         }
     }
 }

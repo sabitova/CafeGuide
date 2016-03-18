@@ -32,5 +32,15 @@ namespace CafeGuide.Properties {
                 return ((string)(this["DatabaseConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-RE0AOSG;Initial Catalog=TestDB1;Integrated Security=True")]
+        public string TestDB1ConnectionString {
+            get {
+                return ((string)(this["TestDB1ConnectionString"]));
+            }
+        }
     }
 }
