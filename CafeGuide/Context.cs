@@ -14,7 +14,7 @@ namespace CafeGuide
         public DbSet<Cuisine> Cuisines { get; set; }
         public DbSet<Type> Types { get; set; }
 
-        public Context() : base("CafeDB")
+        public Context() : base("localsql2014")
         {
         }
     }

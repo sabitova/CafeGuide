@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.Entity;
+using System.Data.OleDb;
 
 namespace CafeGuide
 {
@@ -22,7 +24,19 @@ namespace CafeGuide
     {
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent();      
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            using (OleDbConnection conn = new OleDbConnection(@"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:\Documents\Учеба\Прога\Team project\Database.accdb;"))
+            {
+                OleDbCommand c = new OleDbCommand("SELECT * FROM Cafes", conn);
+                conn.Open();
+                OleDbDataReader oledb = c.ExecuteReader();
+                string s = oledb.GetName(0) + "\t" + oledb.GetName(1);
+                conn.Close();
+            }
         }
     }
 }
