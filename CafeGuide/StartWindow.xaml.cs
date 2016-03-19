@@ -21,6 +21,7 @@ namespace CafeGuide
     {
         RepoProcessing RP = new RepoProcessing();
         DBProcessing DBP = new DBProcessing();
+        Address location = new Address();
 
         public StartWindow()
         {
@@ -32,9 +33,8 @@ namespace CafeGuide
         }
 
         private void button_Car_Click(object sender, RoutedEventArgs e)
-        {
-            Address location = new Address();
-            location.Text = textBox_Street.Text + textBox_House.Text;
+        {       
+            location.Text = "Moscow," + textBox_Street.Text + "," + textBox_House.Text;
          
             //RP.AddEntities();
             //foreach (var cafe in RP.Cafes)
@@ -50,34 +50,39 @@ namespace CafeGuide
 
         private void button_OnFoot_Click(object sender, RoutedEventArgs e)
         {
-
-            Address location = new Address();
             location.Text = textBox_Street.Text + textBox_House.Text;
-
-            RepoProcessing repo = new RepoProcessing();
-            repo.AddEntities();
-
-            foreach (var cafe in repo.Cafes)
-            {               
-                cafe.TimeToGet = APIDirection.GetTime(location, cafe.Address, "walking");
-            }
+         
+            //RP.AddEntities();
+            //foreach (var cafe in RP.Cafes)
+            //{
+            //    cafe.TimeToGet = APIDirection.GetTime(location, cafe.Address, "driving");
+            //}
+           
+            DBP.GetTimeForAllCafes(location, "walking");
+                             
             MainWindow mainWindow = new MainWindow();
-            mainWindow.ShowDialog();
+            mainWindow.ShowDialog(); 
         }
 
         private void button_PublicTransport_Click(object sender, RoutedEventArgs e)
         {
-            Address location = new Address();
             location.Text = textBox_Street.Text + textBox_House.Text;
 
-            RepoProcessing repo = new RepoProcessing();
-            repo.AddEntities();
-            foreach (var cafe in repo.Cafes)
-            {
-                cafe.TimeToGet = APIDirection.GetTime(location, cafe.Address, "transit");
-            }
+            //RP.AddEntities();
+            //foreach (var cafe in RP.Cafes)
+            //{
+            //    cafe.TimeToGet = APIDirection.GetTime(location, cafe.Address, "driving");
+            //}
+
+            DBP.GetTimeForAllCafes(location, "transit");
+
             MainWindow mainWindow = new MainWindow();
             mainWindow.ShowDialog();
+        }
+
+        private void buttonClicked(string text)
+        {
+
         }
     }
 }
