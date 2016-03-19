@@ -45,8 +45,11 @@ namespace CafeGuide
 
         private void buttonSearch_Click(object sender, RoutedEventArgs e)
         {
+
             ResultList showResults = new ResultList();
             showResults.ShowDialog();
+
+
         }
     }
 }

@@ -33,7 +33,6 @@ namespace CafeGuide
             if (CarIsClicked != null)
                 CarIsClicked("driving");
             MainWindow mainWindow = new MainWindow();
-            //GetTime();
             mainWindow.ShowDialog();
             
         }

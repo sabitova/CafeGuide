@@ -69,11 +69,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="CafesDBDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CafesDBDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Context.cs" />
     <Compile Include="DetailedInformation.xaml.cs">
       <DependentUpon>DetailedInformation.xaml</DependentUpon>
@@ -125,17 +120,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="CafesDBDataSet.xsc">
-      <DependentUpon>CafesDBDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="CafesDBDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>CafesDBDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="CafesDBDataSet.xss">
-      <DependentUpon>CafesDBDataSet.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
