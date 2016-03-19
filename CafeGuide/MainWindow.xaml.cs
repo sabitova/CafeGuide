@@ -39,7 +39,7 @@ namespace CafeGuide
                 showResults.ShowDialog();
             }
 
-            catch(Exception e)
+            catch(Exception ex)
             {
                 MessageBox.Show("Wrong input format");
             }
