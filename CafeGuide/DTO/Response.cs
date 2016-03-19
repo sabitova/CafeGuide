@@ -10,6 +10,6 @@ namespace CafeGuide.DTO
     class Response
     {
         [JsonProperty("routes")]
-        public Routes Routes { get; set; }
+        public List<Routes> Routes { get; set; }
     }
 }

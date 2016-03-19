@@ -11,7 +11,7 @@ namespace CafeGuide
 {
     class APIDirection
     {
-        public void GetDirection()
+        public int GetDirection()
         {
         WebClient client = new WebClient();
 
@@ -19,6 +19,7 @@ namespace CafeGuide
         var result = client.DownloadString(query);
         var data = JsonConvert.DeserializeObject<Response>(result);
 
+        return int.Parse(data.Routes[0].Legs[0].Duration.Value);
     }
     }
 }
