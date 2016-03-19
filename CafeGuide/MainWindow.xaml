@@ -42,7 +42,7 @@
             </Button.Background>
         </Button>
         <Label x:Name="label_time" Content="Time to get" HorizontalAlignment="Left" VerticalAlignment="Top" Width="73" FontFamily="Segoe Print" Height="27" Grid.Row="6" FontWeight="Bold" FontSize="10.667" Grid.Column="1"/>
-        <TextBox x:Name="textBoxAverageCheck_Copy" HorizontalAlignment="Left" Height="25" Margin="0,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135" FontFamily="Segoe Print" FontSize="13.333" Grid.Row="6" BorderBrush="Black" Grid.Column="1"/>
+        <TextBox x:Name="textBoxTime" HorizontalAlignment="Left" Height="25" Margin="0,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135" FontFamily="Segoe Print" FontSize="13.333" Grid.Row="6" BorderBrush="Black" Grid.Column="1"/>
         <TextBlock x:Name="textBlock_time" HorizontalAlignment="Left" Margin="140,20,0,0" Grid.Row="6" TextWrapping="Wrap" Text="min" VerticalAlignment="Top" FontFamily="Segoe Print" Grid.Column="1" Height="21" Width="30" FontSize="10.667"/>
     </Grid>
 </Window>

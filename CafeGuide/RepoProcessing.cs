@@ -9,6 +9,7 @@ namespace CafeGuide
     public class RepoProcessing : IProcessing
     {
         public List<Cafe> Cafes = new List<Cafe>();
+        public List<Cuisine> cuisines = new List<Cuisine>();
 
         public void AddEntities()
         {
@@ -74,27 +75,31 @@ namespace CafeGuide
                 Cuisine = new List<Cuisine> { eu, it }
             };
 
+            
+            cuisines.Add(eu);
+            cuisines.Add(it);
+
             Cafes.Add(Cafe1);
             Cafes.Add(Cafe2);
         }
 
-        public List<Cafe> GetSuitableCafes(int time)
+        public List<Cafe> GetSuitableCafes(int time, string type, string cuisine, int avgCheck, bool wi_fi)
         {
-            var address3 = new Address
-            {
-                Id = 3,
-                Text = "Krasnaya pl., d. 1",
-                Lat = "55.7537523",
-                Long = "37.62251679999997"
-            };
 
+            //var address3 = new Address
+            //{
+            //    Id = 3,
+            //    Text = "Krasnaya pl., d. 1",
+            //    Lat = "55.7537523",
+            //    Long = "37.62251679999997"
+            //};
+            List<Cafe> suca = Cafes.Where(c => c.Cuisine.Contains(cuisines.FirstOrDefault(cu => cu.Name == cuisine))).ToList();
             var SuitableCafes = new List<Cafe>();
-
-            foreach (var c in Cafes)
+            foreach (var cafe in Cafes)
             {
-                if (APIDirection.GetTime(address3, c.Address) < time * 60)
-                    SuitableCafes.Add(c);
+                
             }
+
 
             return SuitableCafes;
         }

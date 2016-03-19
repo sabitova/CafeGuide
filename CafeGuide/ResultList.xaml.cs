@@ -52,11 +52,11 @@ namespace CafeGuide
 
             RepoProcessing obj = new RepoProcessing();
             obj.AddEntities();
-            suitableCafes = obj.GetSuitableCafes(60);
-            foreach (var c in suitableCafes)
-            {
-                dataGrid_Results.Items.Add(new Item { Name = c.Name, AvgCheck = c.CheckAvg});
-            }
+            //suitableCafes = obj.GetSuitableCafes(60);
+            //foreach (var c in suitableCafes)
+            //{
+            //    dataGrid_Results.Items.Add(new Item { Name = c.Name, AvgCheck = c.CheckAvg});
+            //}
 
         }
 

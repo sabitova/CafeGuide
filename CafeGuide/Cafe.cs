@@ -19,5 +19,7 @@ namespace CafeGuide
         public DateTime ClosingTime { get; set; }
         public string Website { get; set; }
         public string PhoneNumber { get; set; }
+        public int TimeToGet { get; set; }
+
     }
 }
