@@ -39,8 +39,6 @@ namespace CafeGuide
             comboBoxCuisine.Items.Add("japanese");
             comboBoxCuisine.Items.Add("russian");
 
-
-
         }
 
         private void buttonSearch_Click(object sender, RoutedEventArgs e)

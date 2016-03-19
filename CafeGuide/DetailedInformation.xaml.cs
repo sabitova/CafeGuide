@@ -19,12 +19,21 @@ namespace CafeGuide
     /// </summary>
     public partial class DetailedInformation : Window
     {
+        public static APIPlaces.Place selectedCafeInfo;
+
         public DetailedInformation()
         {
             InitializeComponent();
 
            string name= ResultList.selectedName;
             Cafe cafe = ShowInfo(name);
+            //ПЕРЕДАЙТЬ PLACE ID
+            selectedCafeInfo = APIPlaces.GetPlaceInfo("");
+            var uriImageSource = new Uri(string.Format(@"https://maps.googleapis.com/maps/api/place/photo?photoreference={0}=AIzaSyAYiHyxfoRT-Z5tlEUesao7cr53lln_y7Q", selectedCafeInfo.PhotoID[0]), UriKind.RelativeOrAbsolute);
+            photo1.Source = new BitmapImage(uriImageSource);
+
+            var uriImageSource2 = new Uri(string.Format(@"https://maps.googleapis.com/maps/api/place/photo?photoreference={0}=AIzaSyAYiHyxfoRT-Z5tlEUesao7cr53lln_y7Q", selectedCafeInfo.PhotoID[1]), UriKind.RelativeOrAbsolute);
+            photo2.Source = new BitmapImage(uriImageSource);
 
             textBlock_Name.Text = cafe.Name;
             textBlock_Address.Text = cafe.Address.Text;
@@ -32,10 +41,15 @@ namespace CafeGuide
             textBlock_Cuisine.Text = cafe.Cuisine[0].Name;
             textBlock_Type.Text = cafe.Type.Name;
             textBlock_OpeningHours.Text = cafe.OpeningTime.TimeOfDay.ToString() + "-" + cafe.ClosingTime.TimeOfDay.ToString();
-            if (cafe.WiFi == true)
-                textBlock_Wi_Fi.Text = "Wi-Fi";
+            //if (cafe.WiFi == true)
+            //    textBlock_Wi_Fi.Text = "Wi-Fi";
             textBlock_Website.Text = cafe.Website;
             textBlock_Phone.Text = cafe.PhoneNumber;
+
+            
+
+
+
 
         }
 

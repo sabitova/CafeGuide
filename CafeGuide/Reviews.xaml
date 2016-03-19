@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="Reviews" Height="300" Width="300">
     <Grid>
-        
+        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="205" Margin="10,10,0,0" VerticalAlignment="Top" Width="272"/>
+
     </Grid>
 </Window>

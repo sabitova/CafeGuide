@@ -35,16 +35,16 @@ namespace CafeGuide
         private void button_Car_Click(object sender, RoutedEventArgs e)
         {
             Address location = new Address();
-            location.Text ="Moscow,"+ textBox_Street.Text +","+ textBox_House.Text;
-         
+            location.Text = "Moscow," + textBox_Street.Text + "," + textBox_House.Text;
+
             //RP.AddEntities();
             //foreach (var cafe in RP.Cafes)
             //{
             //    cafe.TimeToGet = APIDirection.GetTime(location, cafe.Address, "driving");
             //}
-           
+
             DBP.GetTimeForAllCafes(location, "driving");
-                             
+
             MainWindow mainWindow = new MainWindow();
             mainWindow.ShowDialog();           
         }

@@ -24,18 +24,18 @@
             <ColumnDefinition Width="129*"/>
             <ColumnDefinition Width="161*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock x:Name="textBlock_Name" Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="37" Width="165" FontSize="14.667" FontFamily="Segoe Print" FontWeight="Bold" Grid.Row="1" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="textBlock_Name" Grid.Column="1" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="37" Width="145" FontSize="14.667" FontFamily="Segoe Print" FontWeight="Bold" Grid.Row="1" Margin="10,2,0,0"/>
         <TextBlock x:Name="textBlock_Address" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" Height="16" Grid.ColumnSpan="2"/>
-        <TextBlock x:Name="textBlock_Website" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="8" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" Height="16" Grid.ColumnSpan="2"/>
-        <TextBlock x:Name="textBlock_Wi_Fi" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="7" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" Height="16" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="textBlock_Website" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="7" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" Height="16" Grid.ColumnSpan="2" Margin="0,2,0,0"/>
         <TextBlock x:Name="textBlock_AverageCheck" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="6" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" Height="16" Grid.ColumnSpan="2"/>
         <TextBlock x:Name="textBlock_OpeningHours" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="5" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" Height="16" Grid.ColumnSpan="2"/>
         <TextBlock x:Name="textBlock_Cuisine" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" Height="16" Grid.ColumnSpan="2"/>
         <TextBlock x:Name="textBlock_Type" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" Height="16" Grid.ColumnSpan="2"/>
-        <TextBlock x:Name="textBlock_Phone" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="9" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" Height="16" Grid.ColumnSpan="2"/>
-        <Image x:Name="image" Grid.Column="2" HorizontalAlignment="Left" Height="117" Grid.Row="1" Grid.RowSpan="4" VerticalAlignment="Top" Width="137" Margin="13,0,0,0" Source="Resources/1.png" Stretch="Fill"/>
-        <Image x:Name="image_Copy" Grid.Column="2" HorizontalAlignment="Left" Height="117" Margin="13,10,0,0" Grid.Row="5" Grid.RowSpan="5" VerticalAlignment="Top" Width="137" Source="Resources/2.1.jpg" Stretch="Fill"/>
-        <Button x:Name="buttonShowMap" Content="Show a map" Grid.Column="1" HorizontalAlignment="Left" Margin="0,31,0,0" Grid.Row="9" VerticalAlignment="Top" Width="165" Height="20" Grid.ColumnSpan="2" Click="buttonShowMap_Click"/>
-        <Button x:Name="buttonShowReviews" Content="Reviews" Grid.Column="2" HorizontalAlignment="Left" Margin="26,31,0,0" Grid.Row="9" VerticalAlignment="Top" Width="145" Click="buttonShowReviews_Click"/>
+        <TextBlock x:Name="textBlock_Phone" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="8" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" Height="16" Grid.ColumnSpan="2" Margin="0,3,0,0"/>
+        <Image x:Name="photo1" Grid.Column="2" HorizontalAlignment="Left" Height="98" Grid.Row="2" Grid.RowSpan="4" VerticalAlignment="Top" Width="137" Margin="26,5,0,0"  Stretch="Fill"/>
+        <Image x:Name="photo2" Grid.Column="2" HorizontalAlignment="Left" Height="117" Margin="26,10,0,0" Grid.Row="6" Grid.RowSpan="4" VerticalAlignment="Top" Width="137" Stretch="Fill"/>
+        <Button x:Name="buttonShowMap" Content="Show a map" Grid.Column="1" HorizontalAlignment="Left" Margin="0,54,0,0" Grid.Row="9" VerticalAlignment="Top" Width="165" Height="20" Grid.ColumnSpan="2" Click="buttonShowMap_Click"/>
+        <Button x:Name="buttonShowReviews" Content="Reviews" Grid.Column="2" HorizontalAlignment="Left" Margin="26,54,0,0" Grid.Row="9" VerticalAlignment="Top" Width="145" Click="buttonShowReviews_Click"/>
+        <Image x:Name="imagelLogo" Grid.Column="2" HorizontalAlignment="Left" Height="47" Margin="76,0,0,0" Grid.Row="1" VerticalAlignment="Top" Width="45"/>
     </Grid>
 </Window>

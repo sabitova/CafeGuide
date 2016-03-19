@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CafeGuide
 {
-    class APIPlaces
+   public class APIPlaces
     {
         public class Place
         {
@@ -20,11 +20,11 @@ namespace CafeGuide
             public List<string> Reviews { get; set; }
         }
 
-        public static void GetPlaceInfo ()
+        public static Place GetPlaceInfo (string placeID)
         {
             WebClient client = new WebClient();
 
-            string query = string.Format("https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJN1t_tDeuEmsRUsoyG83frY4&key=AIzaSyDJW1i0dU5Fg0io0F2qTG4fTRdyP81b04I");
+            string query = string.Format("https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJN1t_tDeuEmsRUsoyG83frY4&key=AIzaSyDJW1i0dU5Fg0io0F2qTG4fTRdyP81b04I", placeID);
             var result = client.DownloadString(query);
             var data = JsonConvert.DeserializeObject<Response>(result);
 
@@ -43,7 +43,7 @@ namespace CafeGuide
 
             }
 
-            Place place = new Place {IconURL=data.Result.Icon, PhotoID = photos, Rating = data.Result.Rating, Authors = authors, Reviews=reviews};           
+            return new Place {IconURL=data.Result.Icon, PhotoID = photos, Rating = data.Result.Rating, Authors = authors, Reviews=reviews};           
         }  
     }
 }
