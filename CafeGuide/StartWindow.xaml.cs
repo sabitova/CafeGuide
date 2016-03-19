@@ -21,7 +21,7 @@ namespace CafeGuide
     {
         RepoProcessing RP = new RepoProcessing();
         DBProcessing DBP = new DBProcessing();
-        Address location = new Address();
+        public static Address location = new Address();
 
         public StartWindow()
         {
@@ -50,14 +50,14 @@ namespace CafeGuide
 
         private void button_OnFoot_Click(object sender, RoutedEventArgs e)
         {
-            location.Text = textBox_Street.Text + textBox_House.Text;
-         
+            location.Text = "Moscow," + textBox_Street.Text + "," + textBox_House.Text;
+
             //RP.AddEntities();
             //foreach (var cafe in RP.Cafes)
             //{
             //    cafe.TimeToGet = APIDirection.GetTime(location, cafe.Address, "driving");
             //}
-           
+
             DBP.GetTimeForAllCafes(location, "walking");
                              
             MainWindow mainWindow = new MainWindow();
@@ -66,7 +66,7 @@ namespace CafeGuide
 
         private void button_PublicTransport_Click(object sender, RoutedEventArgs e)
         {
-            location.Text = textBox_Street.Text + textBox_House.Text;
+            location.Text = "Moscow," + textBox_Street.Text + "," + textBox_House.Text;
 
             //RP.AddEntities();
             //foreach (var cafe in RP.Cafes)
