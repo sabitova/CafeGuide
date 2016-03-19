@@ -44,9 +44,6 @@ namespace CafeGuide
             }
 
             Place place = new Place {IconURL=data.Result.Icon, PhotoID = photos, Rating = data.Result.Rating, Authors = authors, Reviews=reviews};           
-
-        }
-
-       
+        }  
     }
 }

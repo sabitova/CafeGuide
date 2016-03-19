@@ -12,5 +12,6 @@ namespace CafeGuide
         public string Text { get; set; }
         public string Lat { get; set; }
         public string Long { get; set; }
+        public string PlaceId { get; set; }
     }
 }
