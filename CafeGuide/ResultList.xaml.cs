@@ -20,9 +20,24 @@ namespace CafeGuide
     public partial class ResultList : Window
     {
       
-       public List<Cafe> suitableCafes;
+        public List<Cafe> suitableCafes;
         public Item selectedItem;
-       public static string selectedName;
+        public static string selectedName;
+
+        public string Type { get; set; }
+        public string Cuisine { get; set; }
+        public int AvgCheck { get; set; }
+        public int Time { get; set; }
+        public bool WiFi { get; set; }
+
+        public ResultList(string type, string cuisine, int avgCheck, int time, bool wifi)
+        {
+            Type = type;
+            Cuisine = cuisine;
+            AvgCheck = avgCheck;
+            Time = time;
+            WiFi = wifi;
+        }
 
         public class Item
         { 
@@ -62,12 +77,10 @@ namespace CafeGuide
 
         private void dataGrid_Results_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
             selectedItem = dataGrid_Results.SelectedItem as Item;
             selectedName = selectedItem.Name;
             DetailedInformation info = new DetailedInformation();
             info.ShowDialog();
-
         }
 
     }

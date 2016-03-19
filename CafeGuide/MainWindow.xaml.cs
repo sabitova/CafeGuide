@@ -25,7 +25,6 @@ namespace CafeGuide
 
         public MainWindow()
         {
-
             InitializeComponent();
 
             LoadCombo("select Name from Cuisine", comboBoxCuisine);
@@ -34,8 +33,16 @@ namespace CafeGuide
 
         private void buttonSearch_Click(object sender, RoutedEventArgs e)
         {
-            ResultList showResults = new ResultList();
-            showResults.ShowDialog();
+            try
+            {
+                ResultList showResults = new ResultList(comboBoxType.Text, comboBoxCuisine.Text, Convert.ToInt32(textBoxAverageCheck.Text), Convert.ToInt32(textBoxTime.Text), checkBoxWiFi.IsChecked.Value);
+                showResults.ShowDialog();
+            }
+
+            catch(Exception e)
+            {
+                MessageBox.Show("Wrong input format");
+            }
         }
 
         void LoadCombo(string sqlQueryString, ComboBox comboBox)
