@@ -29,6 +29,7 @@ namespace CafeGuide
             Cafe cafe = ShowInfo(name);
             //ПЕРЕДАЙТЬ PLACE ID
             selectedCafeInfo = APIPlaces.GetPlaceInfo("");
+
             var uriImageSource = new Uri(string.Format(@"https://maps.googleapis.com/maps/api/place/photo?photoreference={0}=AIzaSyAYiHyxfoRT-Z5tlEUesao7cr53lln_y7Q", selectedCafeInfo.PhotoID[0]), UriKind.RelativeOrAbsolute);
             photo1.Source = new BitmapImage(uriImageSource);
 
@@ -41,15 +42,24 @@ namespace CafeGuide
             textBlock_Cuisine.Text = cafe.Cuisine[0].Name;
             textBlock_Type.Text = cafe.Type.Name;
             textBlock_OpeningHours.Text = cafe.OpeningTime.TimeOfDay.ToString() + "-" + cafe.ClosingTime.TimeOfDay.ToString();
-            //if (cafe.WiFi == true)
-            //    textBlock_Wi_Fi.Text = "Wi-Fi";
+            if (cafe.WiFi == true)
+            {
+                BitmapImage bi = new BitmapImage();
+                bi.BeginInit();
+                bi.UriSource = new Uri("Resources/1024px-11wifi.png", UriKind.Relative);
+                bi.EndInit();
+                imageWiFi.Stretch = Stretch.Fill;
+                imageWiFi.Source = bi;
+            }
             textBlock_Website.Text = cafe.Website;
             textBlock_Phone.Text = cafe.PhoneNumber;
 
-            
-
-
-
+            BitmapImage bi2 = new BitmapImage();
+            bi2.BeginInit();
+            bi2.UriSource = new Uri(string.Format(@"{0}", selectedCafeInfo.IconURL), UriKind.Relative);
+            bi2.EndInit();
+            imagelLogo.Stretch = Stretch.Fill;
+            imagelLogo.Source = bi2;
 
         }
 
