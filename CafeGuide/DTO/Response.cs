@@ -11,5 +11,6 @@ namespace CafeGuide.DTO
     {
         [JsonProperty("routes")]
         public List<Routes> Routes { get; set; }
+        
     }
 }

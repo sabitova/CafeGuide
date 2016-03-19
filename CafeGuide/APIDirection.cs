@@ -15,7 +15,7 @@ namespace CafeGuide
         {
             WebClient client = new WebClient();
 
-            string query = string.Format("https://maps.googleapis.com/maps/api/directions/json?origin={0},{1}&destination={2},{3}&mode={4}&key=AIzaSyAYiHyxfoRT-Z5tlEUesao7cr53lln_y7Q", from.Lat, from.Long, to.Lat, to.Long, mode);
+            string query = string.Format("https://maps.googleapis.com/maps/api/directions/json?origin={0}&destination={1},{2}&mode={3}&key=AIzaSyAYiHyxfoRT-Z5tlEUesao7cr53lln_y7Q", from.Text, to.Lat, to.Long, mode);
             var result = client.DownloadString(query);
             var data = JsonConvert.DeserializeObject<Response>(result);
             return data.Routes[0].Legs[0].Duration.Value;                  

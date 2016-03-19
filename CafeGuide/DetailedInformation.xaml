@@ -35,6 +35,7 @@
         <TextBlock x:Name="textBlock_Phone" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="9" TextWrapping="Wrap" VerticalAlignment="Top" Width="165" Height="16" Grid.ColumnSpan="2"/>
         <Image x:Name="image" Grid.Column="2" HorizontalAlignment="Left" Height="117" Grid.Row="1" Grid.RowSpan="4" VerticalAlignment="Top" Width="137" Margin="13,0,0,0" Source="Resources/1.png" Stretch="Fill"/>
         <Image x:Name="image_Copy" Grid.Column="2" HorizontalAlignment="Left" Height="117" Margin="13,10,0,0" Grid.Row="5" Grid.RowSpan="5" VerticalAlignment="Top" Width="137" Source="Resources/2.1.jpg" Stretch="Fill"/>
-        <Button x:Name="button" Content="How to Get" Grid.Column="1" HorizontalAlignment="Left" Margin="0,31,0,0" Grid.Row="9" VerticalAlignment="Top" Width="165" Height="20" Grid.ColumnSpan="2" Click="button_Click"/>
+        <Button x:Name="buttonShowMap" Content="Show a map" Grid.Column="1" HorizontalAlignment="Left" Margin="0,31,0,0" Grid.Row="9" VerticalAlignment="Top" Width="165" Height="20" Grid.ColumnSpan="2" Click="buttonShowMap_Click"/>
+        <Button x:Name="buttonShowReviews" Content="Reviews" Grid.Column="2" HorizontalAlignment="Left" Margin="26,31,0,0" Grid.Row="9" VerticalAlignment="Top" Width="145" Click="buttonShowReviews_Click"/>
     </Grid>
 </Window>

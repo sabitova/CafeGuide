@@ -78,6 +78,7 @@
     <Compile Include="DTO2\Response.cs" />
     <Compile Include="DTO2\Result.cs" />
     <Compile Include="DTO2\Reviews.cs" />
+    <Compile Include="DTO\Geocoded_waypoints.cs" />
     <Compile Include="IProcessing.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -88,6 +89,9 @@
     <Compile Include="RepoProcessing.cs" />
     <Compile Include="ResultList.xaml.cs">
       <DependentUpon>ResultList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Reviews.xaml.cs">
+      <DependentUpon>Reviews.xaml</DependentUpon>
     </Compile>
     <Compile Include="StartWindow.xaml.cs">
       <DependentUpon>StartWindow.xaml</DependentUpon>
@@ -151,6 +155,10 @@
     <Page Include="ResultList.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Reviews.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="StartWindow.xaml">
       <SubType>Designer</SubType>
