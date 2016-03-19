@@ -19,6 +19,8 @@ namespace CafeGuide
     /// </summary>
     public partial class StartWindow : Window
     {
+        RepoProcessing RP = new RepoProcessing();
+        DBProcessing DBP = new DBProcessing();
 
         public StartWindow()
         {
@@ -33,18 +35,17 @@ namespace CafeGuide
         {
             Address location = new Address();
             location.Text = textBox_Street.Text + textBox_House.Text;
-
-            RepoProcessing repo = new RepoProcessing();
-            repo.AddEntities();
-
-            foreach (var cafe in repo.Cafes)
-            {
-                cafe.TimeToGet=APIDirection.GetTime(location, cafe.Address, "driving");
-            }
-                       
+         
+            //RP.AddEntities();
+            //foreach (var cafe in RP.Cafes)
+            //{
+            //    cafe.TimeToGet = APIDirection.GetTime(location, cafe.Address, "driving");
+            //}
+           
+            DBP.GetTimeForAllCafes(location, "driving");
+                             
             MainWindow mainWindow = new MainWindow();
-            mainWindow.ShowDialog();
-            
+            mainWindow.ShowDialog();           
         }
 
         private void button_OnFoot_Click(object sender, RoutedEventArgs e)

@@ -29,13 +29,12 @@ namespace CafeGuide
                     {
                         while (reader.Read())
                         {
-                            time.Add(APIDirection.GetTime(from, new Address
-                            { Id = reader.GetInt32(0),
-                                Lat = reader.GetFieldValue<string>(2),
-                                Long = reader.GetFieldValue<string>(3),
-                                PlaceId = reader.GetFieldValue<string>(4),
-                                Text = reader.GetFieldValue<string>(1)
-                            }, mode));
+                            time.Add(APIDirection.GetTime(from, 
+                            new Address
+                            { Lat = reader.GetFieldValue<string>(2),
+                              Long = reader.GetFieldValue<string>(3),
+                            },
+                            mode));
                         }
                     }
                 }
