@@ -42,7 +42,7 @@ namespace CafeGuide
             //    cafe.TimeToGet = APIDirection.GetTime(location, cafe.Address, "driving");
             //}
            
-            DBP.GetTimeForAllCafes(location, "driving");
+            //DBP.GetTimeForAllCafes(location, "driving");
                              
             MainWindow mainWindow = new MainWindow();
             mainWindow.ShowDialog();           
