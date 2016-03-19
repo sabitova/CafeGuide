@@ -56,11 +56,17 @@ namespace CafeGuide
 
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void buttonShowMap_Click(object sender, RoutedEventArgs e)
         {
             Map map = new Map();
             map.ShowDialog();
 
+        }
+
+        private void buttonShowReviews_Click(object sender, RoutedEventArgs e)
+        {
+            Reviews reviews = new Reviews();
+            reviews.ShowDialog();
         }
     }
 
