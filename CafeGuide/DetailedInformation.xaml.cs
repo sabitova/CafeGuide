@@ -31,10 +31,10 @@ namespace CafeGuide
             selectedCafeInfo = APIPlaces.GetPlaceInfo("");
 
             var uriImageSource = new Uri(string.Format(@"https://maps.googleapis.com/maps/api/place/photo?photoreference={0}=AIzaSyAYiHyxfoRT-Z5tlEUesao7cr53lln_y7Q", selectedCafeInfo.PhotoID[0]), UriKind.RelativeOrAbsolute);
-            photo1.Source = new BitmapImage(uriImageSource);
+            //photo1.Source = new BitmapImage(uriImageSource);
 
             var uriImageSource2 = new Uri(string.Format(@"https://maps.googleapis.com/maps/api/place/photo?photoreference={0}=AIzaSyAYiHyxfoRT-Z5tlEUesao7cr53lln_y7Q", selectedCafeInfo.PhotoID[1]), UriKind.RelativeOrAbsolute);
-            photo2.Source = new BitmapImage(uriImageSource);
+            //photo2.Source = new BitmapImage(uriImageSource);
 
             textBlock_Name.Text = cafe.Name;
             textBlock_Address.Text = cafe.Address.Text;

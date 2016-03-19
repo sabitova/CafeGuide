@@ -26,8 +26,8 @@ namespace CafeGuide
             
             for (int i=0; i < DetailedInformation.selectedCafeInfo.Reviews.Count; i++)
             {
-                listBox.Items.Add("Author: "+ DetailedInformation.selectedCafeInfo.Authors);
-                listBox.Items.Add(DetailedInformation.selectedCafeInfo.Reviews);
+                //listBox.Items.Add("Author: "+ DetailedInformation.selectedCafeInfo.Authors);
+                //listBox.Items.Add(DetailedInformation.selectedCafeInfo.Reviews);
             }
         }
     }
