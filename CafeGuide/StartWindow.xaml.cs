@@ -41,22 +41,30 @@ namespace CafeGuide
 
             location.Text = "Moscow," + textBox_Street.Text + "," + textBox_House.Text;
 
-            switch (buttonText)
+            try
             {
-                case "Car":
-                    //slowTask = Task.Factory.StartNew(() => processingObject.GetTimeForAllCafes(location, "driving"));
-                    slowTask = Task.Factory.StartNew(() => SlowDude());
-                    break;
-                case "On Foot":
-                    slowTask = Task.Factory.StartNew(() => processingObject.GetTimeForAllCafes(location, "walking"));
-                    break;
-                case "Public Transport":
-                    slowTask = Task.Factory.StartNew(() => processingObject.GetTimeForAllCafes(location, "transit"));
-                    break;
+                switch (buttonText)
+                {
+                    case "Car":
+                        //slowTask = Task.Factory.StartNew(() => processingObject.GetTimeForAllCafes(location, "driving"));
+                        slowTask = Task.Factory.StartNew(() => SlowDude());
+                        break;
+                    case "On Foot":
+                        slowTask = Task.Factory.StartNew(() => processingObject.GetTimeForAllCafes(location, "walking"));
+                        break;
+                    case "Public Transport":
+                        slowTask = Task.Factory.StartNew(() => processingObject.GetTimeForAllCafes(location, "transit"));
+                        break;
+                }
+
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.ShowDialog();
             }
 
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.ShowDialog();
+            catch (Exception ex)
+            {
+                MessageBox.Show("Invalid input!", "Error");
+            }
         }
 
         // удалить!
@@ -66,13 +74,7 @@ namespace CafeGuide
             MessageBox.Show("Ta-dam! Here I am!");
         }
 
-        private void myTextBox_KeyPress(
-            
-            
-            object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar != 8 && (e.KeyChar < 48 || e.KeyChar > 57))
-                e.Handled = true;
-        }
+
     }
 }
+

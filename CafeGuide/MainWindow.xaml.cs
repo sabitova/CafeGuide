@@ -76,7 +76,7 @@ namespace CafeGuide
         {
             Cursor = Cursors.Wait;
             await StartWindow.slowTask;
-            Cur
+            Cursor = Cursors.Arrow;
             StartWindow.processingObject.FindCafeByName(textBoxName.Text);
         }
     }
