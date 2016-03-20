@@ -27,8 +27,7 @@ namespace CafeGuide
         {
             InitializeComponent();
           
-            var uriImageSource = new Uri(@"https://maps.googleapis.com/maps/api/place/photo?photoreference={0}=AIzaSyAYiHyxfoRT-Z5tlEUesao7cr53lln_y7Q", UriKind.RelativeOrAbsolute);
-            image_1.Source = new BitmapImage(uriImageSource);
+            
 
         }
 

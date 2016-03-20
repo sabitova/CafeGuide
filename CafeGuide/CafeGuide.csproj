@@ -116,6 +116,7 @@
     <Compile Include="DTO\Legs.cs" />
     <Compile Include="DTO\Response.cs" />
     <Compile Include="DTO\Routes.cs" />
+    <Compile Include="WorkWithImages.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -202,6 +203,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\1024px-11wifi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Grungetexture610.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\375109293.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -30,11 +30,10 @@ namespace CafeGuide
             //ПЕРЕДАЙТЬ PLACE ID
             selectedCafeInfo = APIPlaces.GetPlaceInfo("");
 
-            var uriImageSource = new Uri(string.Format(@"https://maps.googleapis.com/maps/api/place/photo?photoreference={0}=AIzaSyAYiHyxfoRT-Z5tlEUesao7cr53lln_y7Q", selectedCafeInfo.PhotoID[0]), UriKind.RelativeOrAbsolute);
-            //photo1.Source = new BitmapImage(uriImageSource);
 
-            var uriImageSource2 = new Uri(string.Format(@"https://maps.googleapis.com/maps/api/place/photo?photoreference={0}=AIzaSyAYiHyxfoRT-Z5tlEUesao7cr53lln_y7Q", selectedCafeInfo.PhotoID[1]), UriKind.RelativeOrAbsolute);
-            //photo2.Source = new BitmapImage(uriImageSource);
+            ShowImage(photo1, string.Format(@"https://maps.googleapis.com/maps/api/place/photo?photoreference={0}=AIzaSyAYiHyxfoRT-Z5tlEUesao7cr53lln_y7Q", selectedCafeInfo.PhotoID[0]));         
+            ShowImage(photo2, string.Format(@"https://maps.googleapis.com/maps/api/place/photo?photoreference={0}=AIzaSyAYiHyxfoRT-Z5tlEUesao7cr53lln_y7Q", selectedCafeInfo.PhotoID[1]));
+            ShowImage(photo3, string.Format(@"https://maps.googleapis.com/maps/api/place/photo?photoreference={0}=AIzaSyAYiHyxfoRT-Z5tlEUesao7cr53lln_y7Q", selectedCafeInfo.PhotoID[2]));         
 
             textBlock_Name.Text = cafe.Name;
             textBlock_Address.Text = cafe.Address.Text;
@@ -44,22 +43,10 @@ namespace CafeGuide
             textBlock_OpeningHours.Text = cafe.OpeningTime.TimeOfDay.ToString() + "-" + cafe.ClosingTime.TimeOfDay.ToString();
             if (cafe.WiFi == true)
             {
-                BitmapImage bi = new BitmapImage();
-                bi.BeginInit();
-                bi.UriSource = new Uri("Resources/1024px-11wifi.png", UriKind.Relative);
-                bi.EndInit();
-                imageWiFi.Stretch = Stretch.Fill;
-                imageWiFi.Source = bi;
+                ShowImage(imageWiFi, "Resources/1024px-11wifi.png");                            
             }
             textBlock_Website.Text = cafe.Website;
             textBlock_Phone.Text = cafe.PhoneNumber;
-
-            BitmapImage bi2 = new BitmapImage();
-            bi2.BeginInit();
-            bi2.UriSource = new Uri(string.Format(@"{0}", selectedCafeInfo.IconURL), UriKind.Relative);
-            bi2.EndInit();
-            imagelLogo.Stretch = Stretch.Fill;
-            imagelLogo.Source = bi2;
 
         }
 
@@ -84,13 +71,23 @@ namespace CafeGuide
         {
             Map map = new Map();
             map.ShowDialog();
-
         }
 
         private void buttonShowReviews_Click(object sender, RoutedEventArgs e)
         {
             Reviews reviews = new Reviews();
             reviews.ShowDialog();
+        }
+
+        private void ShowImage(Image image, string path)
+        {
+            BitmapImage bi = new BitmapImage();
+            bi.BeginInit();
+            bi.UriSource = new Uri(path, UriKind.Relative);
+            bi.EndInit();
+            image.Stretch = Stretch.Fill;
+            image.Source = bi;
+
         }
     }
 
