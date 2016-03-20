@@ -14,6 +14,8 @@ namespace CafeGuide
         void FindCafeByName(string name);
         ArrayList GetPlaceInfo(string placeid);
         string GetPlaceId(string name);
+        string GetLat(string placeid);
+        string GetLong(string placeid);
 
 
     }

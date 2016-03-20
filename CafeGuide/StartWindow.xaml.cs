@@ -33,31 +33,23 @@ namespace CafeGuide
                 (processingObject as RepoProcessing).AddEntities();
         }
 
-        private void button_Car_Click(object sender, RoutedEventArgs e)
+        private void button_Click(object sender, RoutedEventArgs e)
         {
+            string buttonText = ((Button)sender).Content.ToString();
             location.Text = "Moscow," + textBox_Street.Text + "," + textBox_House.Text;
 
-            //processingObject.GetTimeForAllCafes(location, "driving");
-
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.ShowDialog();
-        }
-
-        private void button_OnFoot_Click(object sender, RoutedEventArgs e)
-        {
-            location.Text = "Moscow," + textBox_Street.Text + "," + textBox_House.Text;
-
-            processingObject.GetTimeForAllCafes(location, "walking");
-
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.ShowDialog();
-        }
-
-        private void button_PublicTransport_Click(object sender, RoutedEventArgs e)
-        {
-            location.Text = "Moscow," + textBox_Street.Text + "," + textBox_House.Text;
-
-            processingObject.GetTimeForAllCafes(location, "transit");
+            switch (buttonText)
+            {
+                case "Car":
+                    processingObject.GetTimeForAllCafes(location, "driving");
+                    break;
+                case "On Foot":
+                    processingObject.GetTimeForAllCafes(location, "walking");
+                    break;
+                case "Public Transport":
+                    processingObject.GetTimeForAllCafes(location, "transit");
+                    break;
+            }
 
             MainWindow mainWindow = new MainWindow();
             mainWindow.ShowDialog();

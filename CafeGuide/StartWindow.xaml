@@ -28,9 +28,9 @@
         </Grid.RowDefinitions>
 
         <TextBlock x:Name="textBlock_EnterLocation" HorizontalAlignment="Left" Margin="5,7,0,0" TextWrapping="Wrap" Text="Enter your location" VerticalAlignment="Top" FontFamily="Segoe UI Semilight" FontSize="13.333" Height="18" Width="165" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"/>
-        <Button x:Name="button_OnFoot" Content="On foot" HorizontalAlignment="Left" Margin="5,8,0,0" VerticalAlignment="Top" Width="74" Height="63" Click="button_OnFoot_Click" Grid.Row="5" Grid.Column="2"/>
-        <Button x:Name="button_PublicTransport" Content="Public&#xA;Transport&#xA;" HorizontalAlignment="Left" Margin="3,8,0,0" VerticalAlignment="Top" Width="74" Height="63" Click="button_PublicTransport_Click" Grid.Row="5" Grid.Column="3"/>
-        <Button x:Name="button_Car" Content="Car" HorizontalAlignment="Left" Margin="5,8,0,0" VerticalAlignment="Top" Width="74" Height="63" Click="button_Car_Click" Grid.Row="5" Grid.Column="1"/>
+        <Button x:Name="button_OnFoot" Content="On foot" HorizontalAlignment="Left" Margin="5,8,0,0" VerticalAlignment="Top" Width="74" Height="63" Click="button_Click" Grid.Row="5" Grid.Column="2"/>
+        <Button x:Name="button_PublicTransport" Content="Public&#xA;Transport&#xA;" HorizontalAlignment="Left" Margin="3,8,0,0" VerticalAlignment="Top" Width="74" Height="63" Click="button_Click" Grid.Row="5" Grid.Column="3"/>
+        <Button x:Name="button_Car" Content="Car" HorizontalAlignment="Left" Margin="5,8,0,0" VerticalAlignment="Top" Width="74" Height="63" Click="button_Click" Grid.Row="5" Grid.Column="1"/>
         <TextBox x:Name="textBox_House" HorizontalAlignment="Left" Height="23" Margin="25,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52" Grid.Row="3" Grid.Column="3"/>
         <Label x:Name="labelName" Grid.Row="1" Content="Cafe Guide" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" FontSize="26.667" Height="57" Margin="5,10,0,0" FontFamily="Segoe UI Semilight" Grid.Column="1" Grid.ColumnSpan="2"/>
         <TextBox x:Name="textBox_Street" HorizontalAlignment="Left" Height="23" Margin="5,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="195" Grid.Row="3" FontFamily="Segoe UI Semilight" Grid.Column="1" Grid.ColumnSpan="2"/>

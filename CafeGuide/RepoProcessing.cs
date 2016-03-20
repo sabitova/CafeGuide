@@ -204,5 +204,15 @@ namespace CafeGuide
             return (cafes.Where(c => c.Name == name)
                         .FirstOrDefault()).Address.PlaceId.ToString();
         }
+
+        public string GetLat(string placeid)
+        {
+            return ((addresses.Where(a => a.PlaceId == placeid)).FirstOrDefault()).Lat;
+        }
+
+        public string GetLong(string placeid)
+        {
+            return ((addresses.Where(a => a.PlaceId == placeid)).FirstOrDefault()).Long;
+        }
     }
 }
