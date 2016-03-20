@@ -5,39 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CafeGuide"
         mc:Ignorable="d"
-        Title="Cafe Guide" MaxHeight="400" MaxWidth="500" Height="400" Width="500">
+        Title="Cafe Guide" MaxHeight="400" MaxWidth="510" Height="400" Width="510">
     <Grid Opacity="0.8">
         <Grid.Background>
             <ImageBrush ImageSource="Resources/красный.jpg" Stretch="UniformToFill"/>
         </Grid.Background>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="8*"/>
-            <ColumnDefinition Width="242*"/>
-            <ColumnDefinition Width="115*"/>
-            <ColumnDefinition Width="127*"/>
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="156*"/>
+            <ColumnDefinition Width="156*"/>
+            <ColumnDefinition Width="156*"/>
+            <ColumnDefinition Width="20*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
 
-            <RowDefinition Height="10*"/>
-            <RowDefinition Height="80*"/>
-            <RowDefinition Height="50*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="95*"/>
+            <RowDefinition Height="40*"/>
             <RowDefinition Height="25*"/>
             <RowDefinition Height="50*"/>
-            <RowDefinition Height="35*"/>
-            <RowDefinition Height="119*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="104*"/>
 
         </Grid.RowDefinitions>
 
-        <TextBlock x:Name="textBlock_EnterLocation" HorizontalAlignment="Left" Margin="2,0,0,0" TextWrapping="Wrap" Text="Enter your location" VerticalAlignment="Top" FontFamily="Maiandra GD" FontSize="18.667" Height="25" Width="177" Grid.Row="2" Grid.Column="1" Foreground="#FFF9DC9B"/>
-        <Button x:Name="button_OnFoot" Content="On foot" HorizontalAlignment="Left" Margin="5,8,0,0" VerticalAlignment="Top" Width="74" Height="63" Click="button_Click" Grid.Row="6" Grid.Column="2"/>
-        <Button x:Name="button_PublicTransport" Content="Public&#xA;Transport&#xA;" HorizontalAlignment="Left" Margin="3,8,0,0" VerticalAlignment="Top" Width="74" Height="63" Click="button_Click" Grid.Row="6" Grid.Column="3"/>
-        <Button x:Name="button_Car" Content="Car" HorizontalAlignment="Left" Margin="5,8,0,0" VerticalAlignment="Top" Width="74" Height="63" Click="button_Click" Grid.Row="6" Grid.Column="1"/>
-        <TextBox x:Name="textBox_House" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="52" Grid.Row="4" Grid.Column="3" Background="#FFF9DB99" Opacity="0.5" BorderBrush="{x:Null}"/>
-        <Label x:Name="labelName" Grid.Row="1" Content="Cafe Guide" HorizontalAlignment="Left" VerticalAlignment="Top" Width="242" FontSize="48" Height="60" Margin="115,10,0,0" FontFamily="Imprint MT Shadow" Grid.Column="1" Grid.ColumnSpan="2" Foreground="#FFF9DB99"/>
-        <TextBox x:Name="textBox_Street" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="242" Grid.Row="4" FontFamily="Segoe UI Semilight" Grid.Column="1" Opacity="0.5" Background="#FFF9DB99" BorderBrush="{x:Null}" Foreground="#FF0C0B0A"/>
+        <TextBlock x:Name="textBlock_EnterLocation" HorizontalAlignment="Left" Margin="0,5,0,0" TextWrapping="Wrap" Text="Enter your location" VerticalAlignment="Top" FontFamily="Maiandra GD" FontSize="18.667" Height="25" Width="166" Grid.Row="2" Grid.Column="2" Foreground="#FFF9DC9B" Grid.ColumnSpan="2"/>
+        <Button x:Name="button_OnFoot" Content="On foot" HorizontalAlignment="Left" VerticalAlignment="Top" Width="110" Height="63" Click="button_Click" Grid.Row="6" Grid.Column="2" Foreground="Black" Background="#FFFDF4BF" Opacity="0.5" FontSize="21.333" FontFamily="Maiandra GD" Margin="23,0,0,0"/>
+        <Button x:Name="button_PublicTransport" Content="By public&#xA;transport&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Width="110" Height="63" Click="button_Click" Grid.Row="6" Grid.Column="3" Background="#FFFDF4BF" Opacity="0.5" FontFamily="Maiandra GD" FontSize="21.333" Margin="44,0,0,0"/>
+        <Button x:Name="button_Car" Content="By car" HorizontalAlignment="Left" Margin="2,0,0,0" VerticalAlignment="Top" Width="110" Height="63" Click="button_Click" Grid.Row="6" Grid.Column="1" FontSize="21.333" FontFamily="Maiandra GD" Background="#FFFAE3A2" Opacity="0.5" BorderBrush="#FFFAE3A2" Foreground="#FF38301A"/>
+        <TextBox x:Name="textBox_House" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="52" Grid.Row="4" Grid.Column="3" Background="#FFF9DB99" Opacity="0.5" BorderBrush="{x:Null}" FontFamily="Maiandra GD" FontSize="13.333" Margin="44,0,0,0"/>
+        <Label x:Name="labelName" Grid.Row="1" Content="Cafe Guide" HorizontalAlignment="Left" VerticalAlignment="Top" Width="240" FontSize="48" Height="60" FontFamily="Imprint MT Shadow" Grid.ColumnSpan="3" Foreground="#FFF9DB99" Grid.Column="1" Margin="110,10,0,0"/>
+        <TextBox x:Name="textBox_Street" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="242" Grid.Row="4" FontFamily="Maiandra GD" Grid.Column="1" Opacity="0.5" Background="#FFF9DB99" BorderBrush="{x:Null}" Foreground="#FF0C0B0A" Grid.ColumnSpan="2" FontSize="13.333"/>
         <Label x:Name="labelStreet" Content="Street" HorizontalAlignment="Left" Margin="2,0,0,0" Grid.Row="3" VerticalAlignment="Top" FontSize="13.333" FontFamily="Maiandra GD" Grid.Column="1" Height="25" Width="45" Foreground="#FFF9DB99"/>
-        <Label x:Name="labelHouse" Content="House" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Top" FontSize="13.333" FontFamily="Maiandra GD" Grid.Column="3" Height="25" Width="65" Foreground="#FFF9DB99"/>
-        <Label x:Name="labelHow" Content="How will you get?" Grid.Column="1" HorizontalAlignment="Left" Margin="2,2,0,0" Grid.Row="5" VerticalAlignment="Top" Width="169" FontFamily="Maiandra GD" FontSize="18.667" Height="33" Foreground="#FFFAE3A2"/>
+        <Label x:Name="labelHouse" Content="House" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Top" FontSize="13.333" FontFamily="Maiandra GD" Grid.Column="3" Height="25" Width="65" Foreground="#FFF9DB99" Margin="44,0,0,0"/>
+        <Label x:Name="labelHow" Content="Choose a means of transport" Grid.Column="1" HorizontalAlignment="Left" Margin="100,0,0,0" Grid.Row="5" VerticalAlignment="Top" Width="250" FontFamily="Maiandra GD" FontSize="18.667" Height="33" Foreground="#FFFAE3A2" Grid.ColumnSpan="3"/>
     </Grid>
 
 
