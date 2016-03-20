@@ -30,8 +30,8 @@ namespace CafeGuide
 
         public StartWindow()
         {
-            MessageBox.Show("Hello! This is an application that will help you to choose where to have a meal. Please enter your coordinates (just the NAME of the street and the number" +
-                            " of the building you are currently in - nothing more). Then you will proceed to choosing cafes by the name or by parameters. Good Luck!", "CafeGuide");
+            MessageBox.Show("Hello! \nCafeGuide is an application that will help you to choose where to have a meal. Please enter your coordinates (just the NAME of the street and the number" +
+                            " of the building you are currently in - nothing more). Then you will proceed to choosing cafes by the name or by parameters.\nGood Luck!", "CafeGuide");
             InitializeComponent();
             if (processingObject is RepoProcessing)
                 (processingObject as RepoProcessing).AddEntities();
