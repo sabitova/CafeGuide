@@ -18,6 +18,7 @@ namespace CafeGuide
             public string Rating { get; set; }
             public List<string> Authors { get; set; }
             public List<string> Reviews { get; set; }
+            public string Name { get; set; }
         }
 
         public static Place GetPlaceInfo (string placeID)

@@ -184,28 +184,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\2.1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\2.2.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\3.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\4.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\search-ideogram.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\1024px-11wifi.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\Grungetexture610.jpeg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\375109293.jpg" />
@@ -215,6 +197,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\782111031.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\siteBackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\353466-turquoise.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

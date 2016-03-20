@@ -96,6 +96,7 @@ namespace CafeGuide
             string name = rowview.Row[0].ToString();
             string placeid = dbp.GetPlaceId(name);
             DetailedInformation info = new DetailedInformation(placeid);
+            
             info.ShowDialog();
         }
     }

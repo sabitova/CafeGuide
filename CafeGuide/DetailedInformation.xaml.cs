@@ -23,6 +23,7 @@ namespace CafeGuide
         public static APIPlaces.Place selectedCafeInfo;
         public ArrayList info = new ArrayList();
         DBProcessing dbp = new DBProcessing();
+        public string placeID;
 
         public DetailedInformation(string place_id)
         {
@@ -30,13 +31,14 @@ namespace CafeGuide
 
             //string name= ResultList.selectedName;
             //Cafe cafe = ShowInfo(name);
-            //ПЕРЕДАЙТЬ PLACE ID
+            placeID = place_id;
+
             selectedCafeInfo = APIPlaces.GetPlaceInfo(place_id);
             info = dbp.GetPlaceInfo(place_id);
 
-            //ShowImage(photo1, string.Format(@"https://maps.googleapis.com/maps/api/place/photo?photoreference={0}=AIzaSyAYiHyxfoRT-Z5tlEUesao7cr53lln_y7Q", selectedCafeInfo.PhotoID[0]));         
-            //ShowImage(photo2, string.Format(@"https://maps.googleapis.com/maps/api/place/photo?photoreference={0}=AIzaSyAYiHyxfoRT-Z5tlEUesao7cr53lln_y7Q", selectedCafeInfo.PhotoID[1]));
-            //ShowImage(photo3, string.Format(@"https://maps.googleapis.com/maps/api/place/photo?photoreference={0}=AIzaSyAYiHyxfoRT-Z5tlEUesao7cr53lln_y7Q", selectedCafeInfo.PhotoID[2]));
+            ShowImage(photo1, string.Format(@"https://maps.googleapis.com/maps/api/place/photo?photoreference={0}=AIzaSyCVQZ77qOQBuvlNskkPKYaBU63_l-5B0Us", selectedCafeInfo.PhotoID[0]));
+            ShowImage(photo2, string.Format(@"https://maps.googleapis.com/maps/api/place/photo?photoreference={0}=AAIzaSyCVQZ77qOQBuvlNskkPKYaBU63_l-5B0Us", selectedCafeInfo.PhotoID[1]));
+            ShowImage(photo3, string.Format(@"https://maps.googleapis.com/maps/api/place/photo?photoreference={0}=AIzaSyCVQZ77qOQBuvlNskkPKYaBU63_l-5B0Us", selectedCafeInfo.PhotoID[2]));
 
             textBlock_Name.Text = "Name: " + info[0].ToString();
             textBlock_Address.Text = "Address: " + info[1].ToString();
@@ -85,7 +87,7 @@ namespace CafeGuide
 
         private void buttonShowMap_Click(object sender, RoutedEventArgs e)
         {
-            Map map = new Map();
+            Map map = new Map(placeID);
             map.ShowDialog();
         }
 
@@ -95,7 +97,7 @@ namespace CafeGuide
             reviews.ShowDialog();
         }
 
-        private void ShowImage(Image image, string path)
+        public static void ShowImage(Image image, string path)
         {
             BitmapImage bi = new BitmapImage();
             bi.BeginInit();

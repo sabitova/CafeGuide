@@ -7,13 +7,16 @@
         mc:Ignorable="d"
         Title="Result" MaxHeight="350" MaxWidth="525" Height="350" Width="525">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Resources/siteBackground.jpg"/>
+        </Grid.Background>
 
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="7*"/>
             <ColumnDefinition Width="510*"/>
         </Grid.ColumnDefinitions>
-        <DataGrid x:Name="dataGrid_Results" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Height="301" Width="500" FontFamily="Segoe UI Semilight" FontSize="13.333" IsReadOnly="True" SelectionChanged="dataGrid_Results_SelectionChanged_1" Grid.Column="1"/>
+        <DataGrid x:Name="dataGrid_Results" HorizontalAlignment="Left" Margin="3,8,0,0" VerticalAlignment="Top" Height="301" Width="500" FontFamily="Segoe UI Semilight" FontSize="13.333" IsReadOnly="True" SelectionChanged="dataGrid_Results_SelectionChanged_1" Grid.Column="1" Background="{x:Null}" BorderBrush="{x:Null}"/>
 
     </Grid>
 </Window>

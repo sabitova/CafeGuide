@@ -23,12 +23,13 @@ namespace CafeGuide
         {
             InitializeComponent();
 
-
+            labelName.Content = DetailedInformation.selectedCafeInfo.Name;
+            DetailedInformation.ShowImage(imageLogo, string.Format(@"{0}", DetailedInformation.selectedCafeInfo.IconURL));
             
             for (int i=0; i < DetailedInformation.selectedCafeInfo.Reviews.Count; i++)
             {
-                //listBox.Items.Add("Author: "+ DetailedInformation.selectedCafeInfo.Authors);
-                //listBox.Items.Add(DetailedInformation.selectedCafeInfo.Reviews);
+                listBoxReviews.Items.Add("Author: " + DetailedInformation.selectedCafeInfo.Authors);
+                listBoxReviews.Items.Add(DetailedInformation.selectedCafeInfo.Reviews);
             }
 
 

@@ -19,11 +19,14 @@ namespace CafeGuide
     /// </summary>
     public partial class Map : Window
     {
-        public Map()
+        DBProcessing dbp = new DBProcessing();
+
+        public Map(string place_id)
         {
             InitializeComponent();           
              
-            ShowMap("","", StartWindow.location.Text);
+
+            ShowMap(dbp.GetLat(place_id), dbp.GetLong(place_id), StartWindow.location.Text);
 
         }
 
