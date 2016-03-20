@@ -106,24 +106,6 @@ namespace CafeGuide
 
         }
 
-        private void Size()
-        {
-            double columnWidth = 0;
-            foreach (DataGridColumn dgc in this.dataGrid_Results.Columns)
-                columnWidth += dgc.ActualWidth;
-
-            this.dataGrid_Results.Columns[2].Width = this.dataGrid_Results.ActualWidth - columnWidth + this.dataGrid_Results.Columns[2].ActualWidth - 8;
-        }
-
-        private void dataGrid_Results_Loaded(object sender, RoutedEventArgs e)
-        {
-            Size();
-        }
-
-        private void ataGrid_Results_SizeChanged(object sender, SizeChangedEventArgs e)
-        {
-            Size();
-        }
         private void dataGrid_Results_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             selectedItem = dataGrid_Results.SelectedItem as Item;

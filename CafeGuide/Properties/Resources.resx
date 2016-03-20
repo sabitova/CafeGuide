@@ -145,4 +145,10 @@
   <data name="_375109293" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\375109293.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="fon_252" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fon-252.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_782111031" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\782111031.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

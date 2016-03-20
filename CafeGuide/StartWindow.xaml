@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="Cafe Guide" MaxHeight="425" MaxWidth="300" Height="425" Width="300">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Resources/782111031.jpg"/>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="5*"/>
             <ColumnDefinition Width="70*"/>

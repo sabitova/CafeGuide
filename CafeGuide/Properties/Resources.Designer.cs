@@ -123,6 +123,26 @@ namespace CafeGuide.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _782111031 {
+            get {
+                object obj = ResourceManager.GetObject("_782111031", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fon_252 {
+            get {
+                object obj = ResourceManager.GetObject("fon_252", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Grungetexture610 {
             get {
                 object obj = ResourceManager.GetObject("Grungetexture610", resourceCulture);
