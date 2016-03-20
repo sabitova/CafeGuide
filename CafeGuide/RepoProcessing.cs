@@ -114,19 +114,29 @@ namespace CafeGuide
 
         public void GetSuitableCafes(int time, string type, string cuisine, int avgCheck, bool wi_fi)
         {
-            var suitableCuisine = cuisines.Where(cu => cu.Name == cuisine).FirstOrDefault();
-            var suitableCafes = cafes.Where(c => c.Cuisine.Contains(suitableCuisine)).ToList();
+            List<Cafe> suitableCafes = cafes;
+            if (cuisine != "" && cuisine != null)
+            {
+                var suitableCuisine = cuisines.Where(cu => cu.Name == cuisine).FirstOrDefault();
+                suitableCafes = cafes.Where(c => c.Cuisine.Contains(suitableCuisine)).ToList();
+            }
 
-            var suitableCafes2 = suitableCafes.Where(c => c.Type.Name == type).ToList();
-            var suitableCafes3 = suitableCafes2.Where(c => c.Time <= time).ToList();
-            var suitableCafes4 = suitableCafes3.Where(c => c.CheckAvg <= avgCheck).ToList();
-            var suitableCafes5 = suitableCafes4.Where(c => c.WiFi == wi_fi || true).ToList();
+            if (type != "" && type != null)
+                suitableCafes = suitableCafes.Where(c => c.Type.Name == type).ToList();
+
+            if (time != 0)
+                suitableCafes = suitableCafes.Where(c => c.Time <= time).ToList();
+
+            if (avgCheck != 0)
+                suitableCafes = suitableCafes.Where(c => c.CheckAvg <= avgCheck).ToList();
+
+                suitableCafes = suitableCafes.Where(c => c.WiFi == wi_fi || true).ToList();
 
             ResultList.dt.Columns.Add("Name");
             ResultList.dt.Columns.Add("Time (min)");
             ResultList.dt.Columns.Add("Average Check (rub)");
 
-            foreach (var item in suitableCafes5)
+            foreach (var item in suitableCafes)
             {
                 var row = ResultList.dt.NewRow();
 

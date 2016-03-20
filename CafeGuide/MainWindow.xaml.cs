@@ -22,15 +22,26 @@ namespace CafeGuide
 
     public partial class MainWindow : Window
     {
-        public static string ConnectionString = "Data Source = DESKTOP-tmq0bt1; Initial Catalog = CafesDB; Integrated Security = True";
+        public static string ConnectionString = "Data Source = DESKTOP-RE0AOSG; Initial Catalog = CafesDB; Integrated Security = True";
 
         public MainWindow()
         {
-            InitializeComponent();
+
 
             // Filling comboboxes with data from the DB
-            LoadCombo("select Name from Cuisine", comboBoxCuisine);
-            LoadCombo("select Name from Type", comboBoxType);
+
+            try
+            {
+                LoadCombo("select Name from Cuisine", comboBoxCuisine);
+                LoadCombo("select Name from Type", comboBoxType);
+
+                InitializeComponent();
+            }
+
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Error");
+            }
         }
 
         private async void buttonSearch_Click(object sender, RoutedEventArgs e)
@@ -56,20 +67,27 @@ namespace CafeGuide
 
         void LoadCombo(string sqlQueryString, ComboBox comboBox)
         {
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
-            {
-                connection.Open();
-                using (var command = new SqlCommand(sqlQueryString, connection))
+           // try {
+                using (SqlConnection connection = new SqlConnection(ConnectionString))
                 {
-                    using (SqlDataReader reader = command.ExecuteReader())
+                    connection.Open();
+                    using (var command = new SqlCommand(sqlQueryString, connection))
                     {
-                        while (reader.Read())
+                        using (SqlDataReader reader = command.ExecuteReader())
                         {
-                            comboBox.Items.Add(reader.GetFieldValue<string>(0));
+                            while (reader.Read())
+                            {
+                                comboBox.Items.Add(reader.GetFieldValue<string>(0));
+                            }
                         }
                     }
                 }
-            }
+           // }
+
+            //catch (Exception e)
+            //{
+            //    MessageBox.Show(e.Message, "Error");
+           // }
         }
 
         private async void button_Click(object sender, RoutedEventArgs e)
