@@ -22,7 +22,7 @@ namespace CafeGuide
 
     public partial class MainWindow : Window
     {
-        public string ConnectionString = "Data Source = DESKTOP-RE0AOSG; Initial Catalog = CafesDB; Integrated Security = True";
+        public static string ConnectionString = "Data Source = DESKTOP-RE0AOSG; Initial Catalog = CafesDB; Integrated Security = True";
 
         public MainWindow()
         {
@@ -33,8 +33,11 @@ namespace CafeGuide
             LoadCombo("select Name from Type", comboBoxType);
         }
 
-        private void buttonSearch_Click(object sender, RoutedEventArgs e)
+        private async void buttonSearch_Click(object sender, RoutedEventArgs e)
         {
+            Cursor = Cursors.Wait;            
+            await StartWindow.slowTask;
+            Cursor = Cursors.Arrow;
             try
             {
                 ResultList showResults = new ResultList(comboBoxType.Text, comboBoxCuisine.Text,
@@ -69,8 +72,11 @@ namespace CafeGuide
             }
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private async void button_Click(object sender, RoutedEventArgs e)
         {
+            Cursor = Cursors.Wait;
+            await StartWindow.slowTask;
+            Cur
             StartWindow.processingObject.FindCafeByName(textBoxName.Text);
         }
     }
