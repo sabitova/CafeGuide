@@ -63,89 +63,9 @@ namespace CafeGuide.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _353466_turquoise {
-            get {
-                object obj = ResourceManager.GetObject("_353466_turquoise", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _375109293 {
-            get {
-                object obj = ResourceManager.GetObject("_375109293", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _782111031 {
-            get {
-                object obj = ResourceManager.GetObject("_782111031", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap fon_252 {
-            get {
-                object obj = ResourceManager.GetObject("fon_252", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap luxfon_com_6170 {
-            get {
-                object obj = ResourceManager.GetObject("luxfon_com_6170", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap photo1561 {
-            get {
-                object obj = ResourceManager.GetObject("photo1561", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap search_ideogram {
             get {
                 object obj = ResourceManager.GetObject("search_ideogram", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap siteBackground {
-            get {
-                object obj = ResourceManager.GetObject("siteBackground", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap tekstury_fon_krasnyy_dlya_rabochego_stola_uzory_2560x1600 {
-            get {
-                object obj = ResourceManager.GetObject("tekstury_fon_krasnyy_dlya_rabochego_stola_uzory_2560x1600", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

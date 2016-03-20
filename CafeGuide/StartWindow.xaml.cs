@@ -23,7 +23,7 @@ namespace CafeGuide
         //Uncomment one of the lines depending on what you want to work with (Repo or DB)
 
         //public static IProcessing processingObject = new RepoProcessing();
-        public static IProcessing processingObject = new DBProcessing();
+      public static IProcessing processingObject = new DBProcessing();
 
         public static Address location = new Address();
         public static Task slowTask = null;
@@ -66,13 +66,5 @@ namespace CafeGuide
             MessageBox.Show("Ta-dam! Here I am!");
         }
 
-        private void myTextBox_KeyPress(
-            
-            
-            object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar != 8 && (e.KeyChar < 48 || e.KeyChar > 57))
-                e.Handled = true;
-        }
     }
 }
