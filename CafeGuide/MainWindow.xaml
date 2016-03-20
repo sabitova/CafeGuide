@@ -35,7 +35,7 @@
         <Label x:Name="label3" Content="Cuisine" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Segoe UI Semilight" Height="27" Width="55" Grid.Row="5" Grid.Column="1" Margin="0,2,0,0"/>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="140,27,0,0" Grid.Row="6" TextWrapping="Wrap" Text="rub" VerticalAlignment="Top" FontFamily="Segoe UI Semilight" Grid.Column="1" Height="21" Width="21" FontSize="10.667"/>
         <ComboBox x:Name="comboBoxType" Grid.Column="1" HorizontalAlignment="Left" Margin="0,22,0,0" Grid.Row="4" VerticalAlignment="Top" Width="261" Height="25" FontFamily="Segoe Print" FontSize="14.667" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
-        <Button x:Name="button" Content="" UseLayoutRounding="True" Grid.Column="2" HorizontalAlignment="Left" Margin="15,25,0,0" Grid.Row="2" VerticalAlignment="Top" Width="40" Height="25" BorderBrush="Black" Foreground="{x:Null}" RenderTransformOrigin="0.175,0.4">
+        <Button x:Name="button" Content="" UseLayoutRounding="True" Grid.Column="2" HorizontalAlignment="Left" Margin="15,25,0,0" Grid.Row="2" VerticalAlignment="Top" Width="40" Height="25" BorderBrush="Black" Foreground="{x:Null}" RenderTransformOrigin="0.175,0.4" Click="button_Click">
             <Button.Background>
                 <ImageBrush ImageSource="Resources/search-ideogram.png" Stretch="Uniform"  />
 

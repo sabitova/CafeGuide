@@ -38,18 +38,18 @@ namespace CafeGuide
             //ShowImage(photo2, string.Format(@"https://maps.googleapis.com/maps/api/place/photo?photoreference={0}=AIzaSyAYiHyxfoRT-Z5tlEUesao7cr53lln_y7Q", selectedCafeInfo.PhotoID[1]));
             //ShowImage(photo3, string.Format(@"https://maps.googleapis.com/maps/api/place/photo?photoreference={0}=AIzaSyAYiHyxfoRT-Z5tlEUesao7cr53lln_y7Q", selectedCafeInfo.PhotoID[2]));
 
-            textBlock_Name.Text = info[0].ToString();
-            textBlock_Address.Text = info[1].ToString();
-            textBlock_AverageCheck.Text = info[2].ToString();
-            textBlock_Cuisine.Text = info[3].ToString();
-            textBlock_Type.Text = info[4].ToString();
-            textBlock_OpeningHours.Text = info[5].ToString() + "-" + info[6].ToString();
-            if(info[7].ToString() == "1")
+            textBlock_Name.Text = "Name: " + info[0].ToString();
+            textBlock_Address.Text = "Address: " + info[1].ToString();
+            textBlock_AverageCheck.Text = "Average Check: " + info[2].ToString();
+            textBlock_Cuisine.Text = "Cuisine: " + info[3].ToString();
+            textBlock_Type.Text = "Type: " + info[4].ToString();
+            textBlock_OpeningHours.Text = "Opening Hours: " + info[5].ToString() + "-" + info[6].ToString();
+            if (info[7].ToString() == "1")
             {
                 ShowImage(imageWiFi, "Resources/1024px-11wifi.png");
             }
-            textBlock_Website.Text = info[8].ToString();
-            textBlock_Phone.Text = info[9].ToString();
+            textBlock_Website.Text = "Website: " + info[8].ToString();
+            textBlock_Phone.Text = "Phone number: " + info[9].ToString();
 
             //textBlock_Name.Text = cafe.Name;
             //textBlock_Address.Text = cafe.Address.Text;
@@ -77,7 +77,7 @@ namespace CafeGuide
                 {
                     selectedCafe = c;
                     break;
-                }              
+                }
             }
             return selectedCafe;
 
@@ -107,6 +107,6 @@ namespace CafeGuide
         }
     }
 
-    
+
 
 }
