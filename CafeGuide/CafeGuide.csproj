@@ -181,36 +181,6 @@
     <Resource Include="Resources\1024px-11wifi.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\375109293.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\fon-252.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\782111031.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\siteBackground.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\1024px-11wifi.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\Grungetexture610.jpeg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\375109293.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\luxfon.com-6170.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\tekstury_fon_krasnyy_dlya_rabochego_stola_uzory_2560x1600.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\photo1561.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\красный.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
