@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using System.Collections;
 
 namespace CafeGuide
 {
@@ -16,7 +17,7 @@ namespace CafeGuide
         {
             // building a string
 
-            string query = "select Cafe.Name, Time/60 as [Time], CheckAvg as [Average Check] " +
+            string query = "select distinct Cafe.Name, Time/60 as [Time (min)], CheckAvg as [Average Check (rub)] " +
                            "from Cafe " +
                            "join " +
                            "CafeCuisine on Cafe.Id = CafeCuisine.CafeId " +
@@ -93,7 +94,196 @@ namespace CafeGuide
                     }
                 }
             }
+        }
 
+        public string GetPlaceId(string name)
+        {
+            string placeid = null;
+
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+                using (var command = new SqlCommand(string.Format("select PlaceId " +
+                                                    "from Address " +
+                                                    "join Cafe " +
+                                                    "on Cafe.AdressId = Address.Id " +
+                                                    "where Cafe.Name = '{0}'", name), connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            placeid = reader.GetFieldValue<string>(0);
+                        }
+                    }
+                }
+            }
+            return placeid;
+        }
+
+        public ArrayList GetPlaceInfo(string placeid)
+        {
+            ArrayList info = new ArrayList();
+
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+                using (var command = new SqlCommand(string.Format("select Name " +
+                                                    "from Cafe " +
+                                                    "join Address " +
+                                                    "on Cafe.AdressId = Address.Id " +
+                                                    "where Address.PlaceId = '{0}'", placeid), connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            info.Add(reader.GetFieldValue<string>(0));
+                        }
+                    }
+                }
+
+                using (var command = new SqlCommand(string.Format("select Text " +
+                                                    "from Address " +
+                                                    "where Address.PlaceId = '{0}'", placeid), connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            info.Add(reader.GetFieldValue<string>(0));
+                        }
+                    }
+                }
+
+                using (var command = new SqlCommand(string.Format("select CheckAvg " +
+                                                    "from Cafe " +
+                                                    "join Address " +
+                                                    "on Cafe.AdressId = Address.Id " +
+                                                    "where Address.PlaceId = '{0}'", placeid), connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            info.Add(reader.GetFieldValue<int>(0));
+                        }
+                    }
+                }
+
+                using (var command = new SqlCommand(string.Format("select Cuisine.Name " +
+                                                   "from Cuisine " +
+                                                   "join CafeCuisine " +
+                                                   "on CafeCuisine.CuisineId = Cuisine.Id " +
+                                                   "join Cafe " +
+                                                   "on CafeCuisine.CafeId = Cafe.Id " +
+                                                   "join Address " +
+                                                   "on Cafe.AdressId = Address.Id " +
+                                                   "where Address.PlaceId = '{0}'", placeid), connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            info.Add(reader.GetFieldValue<string>(0));
+                        }
+                    }
+                }
+
+                using (var command = new SqlCommand(string.Format("select Type.Name " +
+                                                   "from Type " +
+                                                   "join Cafe " +
+                                                   "on Cafe.TypeId = Type.Id " +
+                                                   "join Address " +
+                                                   "on Cafe.AdressId = Address.Id " +
+                                                   "where Address.PlaceId = '{0}'", placeid), connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            info.Add(reader.GetFieldValue<string>(0));
+                        }
+                    }
+                }
+
+                 using (var command = new SqlCommand(string.Format("select OpeningTime " +
+                                                   "from Cafe " +
+                                                   "join Address " +
+                                                   "on Cafe.AdressId = Address.Id " +
+                                                   "where Address.PlaceId = '{0}'", placeid), connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            info.Add(reader.GetFieldValue<TimeSpan>(0));
+                        }
+                    }
+                }
+
+                using (var command = new SqlCommand(string.Format("select ClosingTime " +
+                                                  "from Cafe " +
+                                                  "join Address " +
+                                                  "on Cafe.AdressId = Address.Id " +
+                                                  "where Address.PlaceId = '{0}'", placeid), connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            info.Add(reader.GetFieldValue<TimeSpan>(0));
+                        }
+                    }
+                }
+
+                using (var command = new SqlCommand(string.Format("select WiFi " +
+                                                 "from Cafe " +
+                                                 "join Address " +
+                                                 "on Cafe.AdressId = Address.Id " +
+                                                 "where Address.PlaceId = '{0}'", placeid), connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            info.Add(reader.GetFieldValue<bool>(0));
+                        }
+                    }
+                }
+
+                using (var command = new SqlCommand(string.Format("select Website " +
+                                                 "from Cafe " +
+                                                 "join Address " +
+                                                 "on Cafe.AdressId = Address.Id " +
+                                                 "where Address.PlaceId = '{0}'", placeid), connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            info.Add(reader.GetFieldValue<string>(0));
+                        }
+                    }
+                }
+
+                using (var command = new SqlCommand(string.Format("select PhoneNumber " +
+                                                 "from Cafe " +
+                                                 "join Address " +
+                                                 "on Cafe.AdressId = Address.Id " +
+                                                 "where Address.PlaceId = '{0}'", placeid), connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            info.Add(reader.GetFieldValue<string>(0));
+                        }
+                    }
+                }
+            }
+
+            return info;
         }
     }
 }

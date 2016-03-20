@@ -19,60 +19,44 @@ namespace CafeGuide
     /// </summary>
     public partial class StartWindow : Window
     {
-        IProcessing RP = new RepoProcessing();
-        IProcessing DBP = new DBProcessing();
+        IProcessing processingObject = new RepoProcessing();
+        //IProcessing processingObject = new DBProcessing();
 
         public static Address location = new Address();
 
         public StartWindow()
         {
             InitializeComponent();
-          
+            if (processingObject is RepoProcessing)
+                (processingObject as RepoProcessing).AddEntities();
+
         }
 
         private void button_Car_Click(object sender, RoutedEventArgs e)
-        {       
+        {
             location.Text = "Moscow," + textBox_Street.Text + "," + textBox_House.Text;
-         
-            //RP.AddEntities();
-            //foreach (var cafe in RP.Cafes)
-            //{
-            //    cafe.TimeToGet = APIDirection.GetTime(location, cafe.Address, "driving");
-            //}
-           
-            //DBP.GetTimeForAllCafes(location, "driving");
-                             
+
+            processingObject.GetTimeForAllCafes(location, "driving");
+
             MainWindow mainWindow = new MainWindow();
-            mainWindow.ShowDialog();           
+            mainWindow.ShowDialog();
         }
 
         private void button_OnFoot_Click(object sender, RoutedEventArgs e)
         {
             location.Text = "Moscow," + textBox_Street.Text + "," + textBox_House.Text;
 
-            //RP.AddEntities();
-            //foreach (var cafe in RP.Cafes)
-            //{
-            //    cafe.TimeToGet = APIDirection.GetTime(location, cafe.Address, "driving");
-            //}
+            processingObject.GetTimeForAllCafes(location, "walking");
 
-            DBP.GetTimeForAllCafes(location, "walking");
-                             
             MainWindow mainWindow = new MainWindow();
-            mainWindow.ShowDialog(); 
+            mainWindow.ShowDialog();
         }
 
         private void button_PublicTransport_Click(object sender, RoutedEventArgs e)
         {
             location.Text = "Moscow," + textBox_Street.Text + "," + textBox_House.Text;
 
-            //RP.AddEntities();
-            //foreach (var cafe in RP.Cafes)
-            //{
-            //    cafe.TimeToGet = APIDirection.GetTime(location, cafe.Address, "driving");
-            //}
-
-            DBP.GetTimeForAllCafes(location, "transit");
+            processingObject.GetTimeForAllCafes(location, "transit");
 
             MainWindow mainWindow = new MainWindow();
             mainWindow.ShowDialog();
