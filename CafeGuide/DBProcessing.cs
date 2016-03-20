@@ -11,7 +11,8 @@ namespace CafeGuide
 {
     public class DBProcessing : IProcessing
     {
-           public void GetSuitableCafes(int time, string type, string cuisine, int avgCheck, bool wifi)
+           public string ConnectionString = "Data Source = DESKTOP-re0aosg; Initial Catalog = CafesDB; Integrated Security = True";
+        public void GetSuitableCafes(int time, string type, string cuisine, int avgCheck, bool wifi)
         {
             // building a string
 
@@ -48,7 +49,7 @@ namespace CafeGuide
 
             // making a query
 
-            using (SqlConnection connection = new SqlConnection(MainWindow.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
                 using (var command = new SqlCommand(query, connection))
@@ -65,7 +66,7 @@ namespace CafeGuide
         {
             List<int> time = new List<int>();
 
-            using (SqlConnection connection = new SqlConnection(MainWindow.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
                 using (var command1 = new SqlCommand("select * from Address", connection))
@@ -98,7 +99,7 @@ namespace CafeGuide
         {
             string placeid = null;
 
-            using (SqlConnection connection = new SqlConnection(MainWindow.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
                 using (var command = new SqlCommand(string.Format("select PlaceId " +
@@ -123,7 +124,7 @@ namespace CafeGuide
         {
             ArrayList info = new ArrayList();
 
-            using (SqlConnection connection = new SqlConnection(MainWindow.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
                 using (var command = new SqlCommand(string.Format("select Name " +
@@ -289,7 +290,7 @@ namespace CafeGuide
         {
             string lat = null;
 
-            using (SqlConnection connection = new SqlConnection(MainWindow.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
                 using (var command = new SqlCommand(string.Format("select Lat " +
@@ -312,7 +313,7 @@ namespace CafeGuide
         {
             string lng = null;
 
-            using (SqlConnection connection = new SqlConnection(MainWindow.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
                 using (var command = new SqlCommand(string.Format("select Long " +
@@ -341,7 +342,7 @@ namespace CafeGuide
 
         public void ClearTimeColumn()
         {
-            using (SqlConnection connection = new SqlConnection(MainWindow.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
                 using (var command1 = new SqlCommand("select * from Address", connection))

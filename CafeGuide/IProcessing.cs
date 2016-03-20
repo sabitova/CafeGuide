@@ -16,7 +16,5 @@ namespace CafeGuide
         string GetPlaceId(string name);
         string GetLat(string placeid);
         string GetLong(string placeid);
-
-
     }
 }

@@ -22,12 +22,10 @@ namespace CafeGuide
 
     public partial class MainWindow : Window
     {
-        public static string ConnectionString = "Data Source = DESKTOP-re0aosg; Initial Catalog = CafesDB; Integrated Security = True";
-
+        DBProcessing dbp = new DBProcessing();
         public MainWindow()
         {
             // Filling comboboxes with data from the DB
-
             try
             {
                 InitializeComponent();
@@ -66,7 +64,7 @@ namespace CafeGuide
 
         void LoadCombo(string sqlQueryString, ComboBox comboBox)
         {
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            using (SqlConnection connection = new SqlConnection(dbp.ConnectionString))
             {
                 connection.Open();
                 using (var command = new SqlCommand(sqlQueryString, connection))
