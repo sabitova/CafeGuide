@@ -18,7 +18,7 @@
             <ColumnDefinition Width="488*"/>
             <ColumnDefinition Width="7*"/>
         </Grid.ColumnDefinitions>
-        <DataGrid x:Name="dataGrid_Results" HorizontalAlignment="Left" Margin="3,10,0,0" VerticalAlignment="Top" Height="315" Width="482" FontFamily="Maiandra GD" FontSize="13.333" IsReadOnly="True" SelectionChanged="dataGrid_Results_SelectionChanged_1" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFFDF4BF" Grid.Column="1"/>
+        <DataGrid x:Name="dataGrid_Results" HorizontalAlignment="Left" Margin="3,10,0,0" VerticalAlignment="Top" Height="315" Width="482" FontFamily="Maiandra GD" FontSize="13.333" IsReadOnly="True" SelectionChanged="dataGrid_Results_SelectionChanged_1" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Grid.Column="1"/>
 
     </Grid>
 </Window>

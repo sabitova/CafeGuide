@@ -337,5 +337,27 @@ namespace CafeGuide
             DetailedInformation info = new DetailedInformation(placeid);
             info.ShowDialog();
         }
+
+
+        public void ClearTimeColumn()
+        {
+            using (SqlConnection connection = new SqlConnection(MainWindow.ConnectionString))
+            {
+                connection.Open();
+                using (var command1 = new SqlCommand("select * from Address", connection))
+                { 
+
+                    using (var command = new SqlCommand("ALTER TABLE Cafe DROP COLUMN Time", connection))
+                    {
+                        command.ExecuteNonQuery();
+                    }
+
+                    using (var command2 = new SqlCommand(" ALTER TABLE Cafe ADD Time int", connection))
+                    {
+                        command2.ExecuteNonQuery();
+                    }
+                }
+            }
+        }
     }
 }

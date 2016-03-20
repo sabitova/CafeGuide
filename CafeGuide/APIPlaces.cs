@@ -14,7 +14,6 @@ namespace CafeGuide
         public class Place
         {
             public string IconURL { get; set; }
-            public List<string> PhotoID { get; set; }
             public string Rating { get; set; }
             public List<string> Authors { get; set; }
             public List<string> Reviews { get; set; }
@@ -25,26 +24,23 @@ namespace CafeGuide
         {
             WebClient client = new WebClient();
 
-            string query = string.Format("https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJN1t_tDeuEmsRUsoyG83frY4&key=AIzaSyDJW1i0dU5Fg0io0F2qTG4fTRdyP81b04I", placeID);
+            string query = string.Format("https://maps.googleapis.com/maps/api/place/details/json?placeid={0}&key=AIzaSyDJW1i0dU5Fg0io0F2qTG4fTRdyP81b04I", placeID);
             var result = client.DownloadString(query);
             var data = JsonConvert.DeserializeObject<Response>(result);
+            byte[] bytes;
 
-            List<string> photos = new List<string>();
-            foreach (var photo in data.Result.Photos)
-            {
-                photos.Add(photo.PhotoReference);
-            }
 
             List<string> reviews = new List<string>();
             List<string> authors = new List<string>();
             for (int i=0; i<data.Result.Reviews.Count-1; i++ )
             {
-                reviews.Add(data.Result.Reviews[i].Text);
-                authors.Add(data.Result.Reviews[i].Author);
-
+                bytes = Encoding.Default.GetBytes(data.Result.Reviews[i].Text);
+                reviews.Add(Encoding.UTF8.GetString(bytes));
+                bytes = Encoding.Default.GetBytes(data.Result.Reviews[i].Author);
+                authors.Add(Encoding.UTF8.GetString(bytes));
             }
 
-            return new Place {IconURL=data.Result.Icon, PhotoID = photos, Rating = data.Result.Rating, Authors = authors, Reviews=reviews};           
+            return new Place {IconURL=data.Result.Icon, Rating = data.Result.Rating, Authors = authors, Reviews=reviews};           
         }  
     }
 }

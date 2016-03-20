@@ -22,8 +22,8 @@ namespace CafeGuide
     {
         //Uncomment one of the lines depending on what you want to work with (Repo or DB)
 
-        public static IProcessing processingObject = new RepoProcessing();
-       //public static IProcessing processingObject = new DBProcessing();
+       // public static IProcessing processingObject = new RepoProcessing();
+        public static IProcessing processingObject = new DBProcessing();
 
         public static Address location = new Address();
         public static Task slowTask = null;
@@ -35,6 +35,9 @@ namespace CafeGuide
             InitializeComponent();
             if (processingObject is RepoProcessing)
                 (processingObject as RepoProcessing).AddEntities();
+
+            if (processingObject is DBProcessing)
+                (processingObject as DBProcessing).ClearTimeColumn();
         }
 
         private void button_Click(object sender, RoutedEventArgs e)

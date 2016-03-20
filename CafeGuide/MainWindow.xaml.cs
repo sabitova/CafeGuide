@@ -32,10 +32,11 @@ namespace CafeGuide
 
             try
             {
+                InitializeComponent();
+
                 LoadCombo("select Name from Cuisine", comboBoxCuisine);
                 LoadCombo("select Name from Type", comboBoxType);
 
-                InitializeComponent();
             }
 
             catch (Exception e)
@@ -59,7 +60,7 @@ namespace CafeGuide
                 showResults.ShowDialog();
             }
 
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -67,27 +68,27 @@ namespace CafeGuide
 
         void LoadCombo(string sqlQueryString, ComboBox comboBox)
         {
-           // try {
-                using (SqlConnection connection = new SqlConnection(ConnectionString))
+            // try {
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+                using (var command = new SqlCommand(sqlQueryString, connection))
                 {
-                    connection.Open();
-                    using (var command = new SqlCommand(sqlQueryString, connection))
+                    using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        using (SqlDataReader reader = command.ExecuteReader())
+                        while (reader.Read())
                         {
-                            while (reader.Read())
-                            {
-                                comboBox.Items.Add(reader.GetFieldValue<string>(0));
-                            }
+                            comboBox.Items.Add(reader.GetFieldValue<string>(0));
                         }
                     }
                 }
-           // }
+            }
+            // }
 
             //catch (Exception e)
             //{
             //    MessageBox.Show(e.Message, "Error");
-           // }
+            // }
         }
 
         private async void button_Click(object sender, RoutedEventArgs e)
