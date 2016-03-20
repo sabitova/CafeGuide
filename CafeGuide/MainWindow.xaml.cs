@@ -35,13 +35,16 @@ namespace CafeGuide
         {
             try
             {
-                ResultList showResults = new ResultList(comboBoxType.Text, comboBoxCuisine.Text, Convert.ToInt32(textBoxAverageCheck.Text), Convert.ToInt32(textBoxTime.Text), checkBoxWiFi.IsChecked.Value);
+                ResultList showResults = new ResultList(comboBoxType.Text, comboBoxCuisine.Text,
+                    textBoxAverageCheck.Text == "" ? 0 : Convert.ToInt32(textBoxAverageCheck.Text),
+                    textBoxAverageCheck.Text == "" ? 0 : Convert.ToInt32(textBoxTime.Text), 
+                    checkBoxWiFi.IsChecked.Value);
                 showResults.ShowDialog();
             }
 
             catch(Exception ex)
             {
-                MessageBox.Show("Wrong input format");
+                MessageBox.Show(ex.Message);
             }
         }
 
