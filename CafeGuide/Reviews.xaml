@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="Reviews" MaxHeight="400" MaxWidth="370" Height="400" Width="370">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Resources/siteBackground.jpg"/>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="15*"/>
             <RowDefinition Height="50*"/>
@@ -17,7 +20,7 @@
             <ColumnDefinition Width="240*"/>
             <ColumnDefinition Width="117*"/>
         </Grid.ColumnDefinitions>
-        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="289" Margin="5,10,0,0" VerticalAlignment="Top" Width="342" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2"/>
+        <ListBox x:Name="listBoxReviews" HorizontalAlignment="Left" Height="289" Margin="5,10,0,0" VerticalAlignment="Top" Width="342" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Segoe UI Semilight"/>
         <Label x:Name="labelName" Content="" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" Width="160" FontFamily="Segoe UI Semilight" FontSize="18.667" Grid.Column="1" Height="35" Grid.Row="1"/>
         <Image x:Name="imageLogo" HorizontalAlignment="Left" Height="50" Margin="15,10,0,0" VerticalAlignment="Top" Width="65" Grid.Column="2" Grid.RowSpan="2"/>
 

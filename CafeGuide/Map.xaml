@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="Map" MaxHeight="350" MaxWidth="400" Height="350" Width="400">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Resources/siteBackground.jpg"/>
+        </Grid.Background>
         <Image x:Name="image" HorizontalAlignment="Left" Height="299" Margin="22,10,0,0" VerticalAlignment="Top" Width="347"/>
   
         

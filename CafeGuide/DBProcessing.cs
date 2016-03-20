@@ -286,11 +286,50 @@ namespace CafeGuide
             return info;
         }
 
-        public void FindCafeByName(string name)
+        public string GetLat(string placeid)
         {
-            string placeid = GetPlaceId(name);
-            DetailedInformation info = new DetailedInformation(placeid);
-            info.ShowDialog();
+            string lat = null;
+
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+                using (var command = new SqlCommand(string.Format("select Lat " +
+                                                    "from Address " +
+                                                    "where Address.PlaceId = '{0}'", placeid), connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            lat = reader.GetFieldValue<string>(0);
+                        }
+                    }
+                }
+            }
+            return lat;
+        }
+
+        public string GetLong(string placeid)
+        {
+            string lng = null;
+
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+                using (var command = new SqlCommand(string.Format("select Long " +
+                                                    "from Address " +
+                                                    "where Address.PlaceId = '{0}'", placeid), connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            lng = reader.GetFieldValue<string>(0);
+                        }
+                    }
+                }
+            }
+            return lng;
         }
     }
 }

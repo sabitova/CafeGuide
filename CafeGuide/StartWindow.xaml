@@ -7,10 +7,14 @@
         mc:Ignorable="d"
         Title="Cafe Guide" MaxHeight="425" MaxWidth="300" Height="425" Width="300">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Resources/siteBackground.jpg"/>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="5*"/>
-            <ColumnDefinition Width="70*"/>
-            <ColumnDefinition Width="217*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="87*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
 
@@ -24,15 +28,15 @@
         </Grid.RowDefinitions>
 
         <TextBlock x:Name="textBlock_EnterLocation" HorizontalAlignment="Left" Margin="5,7,0,0" TextWrapping="Wrap" Text="Enter your location" VerticalAlignment="Top" FontFamily="Segoe UI Semilight" FontSize="13.333" Height="18" Width="165" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"/>
-        <Button x:Name="button_OnFoot" Content="On foot" HorizontalAlignment="Left" Margin="35,8,0,0" VerticalAlignment="Top" Width="74" Height="63" Click="button_OnFoot_Click" Grid.Row="5" Grid.Column="2"/>
-        <Button x:Name="button_PublicTransport" Content="Public&#xA;Transport&#xA;" HorizontalAlignment="Left" Margin="133,8,0,0" VerticalAlignment="Top" Width="74" Height="63" Click="button_PublicTransport_Click" Grid.Row="5" Grid.Column="2"/>
-        <Button x:Name="button_Car" Content="Car" HorizontalAlignment="Left" Margin="5,8,0,0" VerticalAlignment="Top" Width="74" Height="63" Click="button_Car_Click" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="textBox_House" HorizontalAlignment="Left" Height="23" Margin="155,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52" Grid.Row="3" Grid.Column="2"/>
-        <Label x:Name="labelName" Grid.Row="1" Content="Cafe Guide" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" FontSize="26.667" Height="57" Margin="5,0,0,0" FontFamily="Segoe UI Semilight" Grid.Column="2"/>
+        <Button x:Name="button_OnFoot" Content="On foot" HorizontalAlignment="Left" Margin="5,8,0,0" VerticalAlignment="Top" Width="74" Height="63" Click="button_OnFoot_Click" Grid.Row="5" Grid.Column="2"/>
+        <Button x:Name="button_PublicTransport" Content="Public&#xA;Transport&#xA;" HorizontalAlignment="Left" Margin="3,8,0,0" VerticalAlignment="Top" Width="74" Height="63" Click="button_PublicTransport_Click" Grid.Row="5" Grid.Column="3"/>
+        <Button x:Name="button_Car" Content="Car" HorizontalAlignment="Left" Margin="5,8,0,0" VerticalAlignment="Top" Width="74" Height="63" Click="button_Car_Click" Grid.Row="5" Grid.Column="1"/>
+        <TextBox x:Name="textBox_House" HorizontalAlignment="Left" Height="23" Margin="25,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52" Grid.Row="3" Grid.Column="3"/>
+        <Label x:Name="labelName" Grid.Row="1" Content="Cafe Guide" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" FontSize="26.667" Height="57" Margin="5,10,0,0" FontFamily="Segoe UI Semilight" Grid.Column="1" Grid.ColumnSpan="2"/>
         <TextBox x:Name="textBox_Street" HorizontalAlignment="Left" Height="23" Margin="5,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="195" Grid.Row="3" FontFamily="Segoe UI Semilight" Grid.Column="1" Grid.ColumnSpan="2"/>
         <Label x:Name="labelStreet" Content="Street" HorizontalAlignment="Left" Margin="5,25,0,0" Grid.Row="2" VerticalAlignment="Top" FontSize="9.333" FontFamily="Segoe UI Semilight" Grid.Column="1" Height="20" Width="33"/>
-        <Label x:Name="labelHouse" Content="House" HorizontalAlignment="Left" Margin="155,25,0,0" Grid.Row="2" VerticalAlignment="Top" FontSize="9.333" FontFamily="Segoe UI Semilight" Grid.Column="2" Height="20" Width="36"/>
-        <Label x:Name="labelHow" Content="How will you get?" Grid.Column="2" HorizontalAlignment="Left" Margin="5,10,0,0" Grid.Row="4" VerticalAlignment="Top" Width="125" FontFamily="Segoe UI Semilight" FontSize="13.333" Height="28"/>
+        <Label x:Name="labelHouse" Content="House" HorizontalAlignment="Left" Margin="25,25,0,0" Grid.Row="2" VerticalAlignment="Top" FontSize="9.333" FontFamily="Segoe UI Semilight" Grid.Column="3" Height="20" Width="36"/>
+        <Label x:Name="labelHow" Content="How will you get?" Grid.Column="1" HorizontalAlignment="Left" Margin="5,10,0,0" Grid.Row="4" VerticalAlignment="Top" Width="125" FontFamily="Segoe UI Semilight" FontSize="13.333" Height="28" Grid.ColumnSpan="2"/>
     </Grid>
 
 
