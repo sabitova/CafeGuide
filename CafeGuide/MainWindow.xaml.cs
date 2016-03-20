@@ -28,6 +28,7 @@ namespace CafeGuide
         {
             InitializeComponent();
 
+            // Filling comboboxes with data from the DB
             LoadCombo("select Name from Cuisine", comboBoxCuisine);
             LoadCombo("select Name from Type", comboBoxType);
         }

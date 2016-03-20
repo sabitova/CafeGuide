@@ -19,8 +19,10 @@ namespace CafeGuide
     /// </summary>
     public partial class StartWindow : Window
     {
-        public static IProcessing processingObject = new RepoProcessing();
-        //public static IProcessing processingObject = new DBProcessing();
+        //Uncomment one of the lines depending on what you want to work with (Repo or DB)
+
+        //public static IProcessing processingObject = new RepoProcessing();
+        public static IProcessing processingObject = new DBProcessing();
 
         public static Address location = new Address();
 
@@ -29,11 +31,10 @@ namespace CafeGuide
             InitializeComponent();
             if (processingObject is RepoProcessing)
                 (processingObject as RepoProcessing).AddEntities();
-
         }
 
         private void button_Car_Click(object sender, RoutedEventArgs e)
-        { 
+        {
             location.Text = "Moscow," + textBox_Street.Text + "," + textBox_House.Text;
 
             //processingObject.GetTimeForAllCafes(location, "driving");
@@ -60,11 +61,6 @@ namespace CafeGuide
 
             MainWindow mainWindow = new MainWindow();
             mainWindow.ShowDialog();
-        }
-
-        private void buttonClicked(string text)
-        {
-
         }
     }
 }

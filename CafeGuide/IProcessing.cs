@@ -13,6 +13,7 @@ namespace CafeGuide
         void GetTimeForAllCafes(Address from, string mode);
         void FindCafeByName(string name);
         ArrayList GetPlaceInfo(string placeid);
+        string GetPlaceId(string name);
 
 
     }

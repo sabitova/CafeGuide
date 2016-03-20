@@ -75,7 +75,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CafesDBDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Context.cs" />
     <Compile Include="DBProcessing.cs" />
     <Compile Include="DetailedInformation.xaml.cs">
       <DependentUpon>DetailedInformation.xaml</DependentUpon>

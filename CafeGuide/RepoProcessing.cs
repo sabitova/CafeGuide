@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
+using System.Data;
 
 namespace CafeGuide
 {
@@ -26,13 +27,13 @@ namespace CafeGuide
             var anticafe = new Type
             {
                 Id = 1,
-                Name = "anticafe"
+                Name = "Anticafe"
             };
 
             var bar = new Type
             {
                 Id = 2,
-                Name = "bar"
+                Name = "Bar"
             };
 
             var address1 = new Address
@@ -113,12 +114,32 @@ namespace CafeGuide
 
         public void GetSuitableCafes(int time, string type, string cuisine, int avgCheck, bool wi_fi)
         {
-            suitableCafes = cafes.Where(c => c.Cuisine.Contains(cuisines.FirstOrDefault(cu => cu.Name == cuisine)))
-                                 .Where(c => c.Type.Name == type)
-                                 .Where(c => c.Time <= time)
-                                 .Where(c => c.CheckAvg <= avgCheck)
-                                 .Where(c => wi_fi)
-                                 .ToList();
+            var suitableCuisine = cuisines.Where(cu => cu.Name == cuisine).FirstOrDefault();
+            var suitableCafes = cafes.Where(c => c.Cuisine.Contains(suitableCuisine)).ToList();
+            //.Where(c => c.Type.Name == type)
+            //.Where(c => c.Time <= time)
+            //.Where(c => c.CheckAvg <= avgCheck)
+            //.Where(c => c.WiFi == wi_fi || true)
+            //.ToList();
+            var suitableCafes2 = suitableCafes.Where(c => c.Type.Name == type).ToList();
+            var suca3 = suitableCafes2.Where(c => c.Time <= time).ToList();
+            var suca4 = suca3.Where(c => c.CheckAvg <= avgCheck).ToList();
+            var suca5 = suca4.Where(c => c.WiFi == wi_fi || true).ToList();
+
+            ResultList.dt.Columns.Add("Name");
+            ResultList.dt.Columns.Add("Time (min)");
+            ResultList.dt.Columns.Add("Average Check (rub)");
+
+            foreach (var item in suca5)
+            {
+                var row = ResultList.dt.NewRow();
+
+                row["Name"] = item.Name;
+                row["Time (min)"] = item.Time.ToString();
+                row["Average Check (rub)"] = item.CheckAvg.ToString();
+
+                ResultList.dt.Rows.Add(row);
+            }
         }
 
         public void GetTimeForAllCafes(Address from, string mode)
@@ -153,8 +174,9 @@ namespace CafeGuide
             info.Add(((cafes.Where(c => c.Address.PlaceId == placeid))
                             .FirstOrDefault()).CheckAvg).ToString();
 
+
             info.Add(((cafes.Where(c => c.Address.PlaceId == placeid))
-                            .FirstOrDefault()).Cuisine).ToString();
+                            .FirstOrDefault()).Cuisine);
 
             info.Add(((cafes.Where(c => c.Address.PlaceId == placeid))
                             .FirstOrDefault()).Type.Name).ToString();
@@ -175,6 +197,12 @@ namespace CafeGuide
                             .FirstOrDefault()).PhoneNumber).ToString();
 
             return info;
+        }
+
+        public string GetPlaceId(string name)
+        {
+            return (cafes.Where(c => c.Name == name)
+                        .FirstOrDefault()).Address.PlaceId.ToString();
         }
     }
 }
