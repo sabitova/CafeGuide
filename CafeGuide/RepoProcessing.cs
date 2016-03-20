@@ -3,19 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
 
 namespace CafeGuide
 {
     public class RepoProcessing : IProcessing
     {
-        public List<Cafe> cafes = new List<Cafe>();
-        public List<Cuisine> cuisines = new List<Cuisine>();
-        public List<Type> types = new List<Type>();
+        public List<Cafe> cafes;
+        public List<Cuisine> cuisines;
+        public List<Type> types;
+        public List<Address> addresses;
 
         public List<Cafe> suitableCafes;
 
         public void AddEntities()
         {
+            cafes = new List<Cafe>();
+            cuisines = new List<Cuisine>();
+            types = new List<Type>();
+            addresses = new List<Address>();
+
             var anticafe = new Type
             {
                 Id = 1,
@@ -31,25 +38,28 @@ namespace CafeGuide
             var address1 = new Address
             {
                 Id = 1,
-                Text = "Myasnitskaya ul., d. 17, str. 2",
-                Lat = "55.763789",
-                Long = "37.634681"
+                Text = "Zemlyanoj Val ul., 60c1",
+                Lat = "55.7469",
+                Long = "37.654963",
+                PlaceId = "ChIJmzoe4e5KtUYRnI2rgFXy2j0"
             };
 
             var address2 = new Address
             {
                 Id = 2,
-                Text = "Pokrovka ul., d. 19",
-                Lat = "55.759794",
-                Long = "37.646223899999995"
+                Text = "Ladozhskaja ul., 2/37, str. 1",
+                Lat = "55.77105899999999",
+                Long = "37.6792975",
+                PlaceId = "ChIJi8L8bYJKtUYRKSs35OFfI0U"
             };
 
             var address3 = new Address
             {
                 Id = 3,
-                Text = "Krasnaya pl., d. 1",
-                Lat = "55.7537523",
-                Long = "37.62251679999997"
+                Text = "Staraja Basmannaja ul., 7, str. 1",
+                Lat = "55.7645437",
+                Long = "37.6569245",
+                PlaceId = "ChIJNcJmWYhKtUYRYYOkITwbA1g"
             };
 
             var eu = new Cuisine
@@ -72,7 +82,7 @@ namespace CafeGuide
                 Address = address1,
                 CheckAvg = 300,
                 WiFi = true,
-                Cuisine = new List<Cuisine> { eu }
+                Cuisine = new List<Cuisine> { eu, it }
             };
 
             var Cafe2 = new Cafe
@@ -95,6 +105,10 @@ namespace CafeGuide
 
             cafes.Add(Cafe1);
             cafes.Add(Cafe2);
+
+            addresses.Add(address1);
+            addresses.Add(address2);
+            addresses.Add(address3);
         }
 
         public void GetSuitableCafes(int time, string type, string cuisine, int avgCheck, bool wi_fi)
@@ -113,6 +127,54 @@ namespace CafeGuide
             {
                 c.Time = APIDirection.GetTime(from, c.Address, mode);
             }
+        }
+
+        public void FindCafeByName(string name)
+        {
+            var placeid = cafes.Where(c => c.Name == name)
+                               .First()
+                               .Address.PlaceId;
+
+            DetailedInformation info = new DetailedInformation(placeid);
+            info.ShowDialog();
+        }
+
+        public ArrayList GetPlaceInfo(string placeid)
+        {
+            ArrayList info = new ArrayList();
+
+            info.Add(((cafes.Where(c => c.Address.PlaceId == placeid))
+                            .FirstOrDefault()).Name).ToString();
+
+
+            info.Add(((cafes.Where(c => c.Address.PlaceId == placeid))
+                            .FirstOrDefault()).Address.Text).ToString();
+
+            info.Add(((cafes.Where(c => c.Address.PlaceId == placeid))
+                            .FirstOrDefault()).CheckAvg).ToString();
+
+            info.Add(((cafes.Where(c => c.Address.PlaceId == placeid))
+                            .FirstOrDefault()).Cuisine).ToString();
+
+            info.Add(((cafes.Where(c => c.Address.PlaceId == placeid))
+                            .FirstOrDefault()).Type.Name).ToString();
+
+            info.Add(((cafes.Where(c => c.Address.PlaceId == placeid))
+                            .FirstOrDefault()).OpeningTime).ToString();
+
+            info.Add(((cafes.Where(c => c.Address.PlaceId == placeid))
+                            .FirstOrDefault()).ClosingTime).ToString();
+
+            info.Add(((cafes.Where(c => c.Address.PlaceId == placeid))
+                            .FirstOrDefault()).WiFi).ToString();
+
+            info.Add(((cafes.Where(c => c.Address.PlaceId == placeid))
+                            .FirstOrDefault()).Website).ToString();
+
+            info.Add(((cafes.Where(c => c.Address.PlaceId == placeid))
+                            .FirstOrDefault()).PhoneNumber).ToString();
+
+            return info;
         }
     }
 }

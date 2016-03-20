@@ -19,6 +19,7 @@ namespace CafeGuide
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+
     public partial class MainWindow : Window
     {
         public string ConnectionString = "Data Source = DESKTOP-RE0AOSG; Initial Catalog = CafesDB; Integrated Security = True";
@@ -69,7 +70,7 @@ namespace CafeGuide
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-
+            StartWindow.processingObject.FindCafeByName(textBoxName.Text);
         }
     }
 }
