@@ -9,6 +9,7 @@ namespace CafeGuide
     interface IProcessing
     {
         void GetSuitableCafes(int time, string type, string cuisine, int avgCheck, bool wi_fi);
+        void GetTimeForAllCafes(Address from, string mode);
         
     }
 }

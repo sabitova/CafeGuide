@@ -57,7 +57,6 @@ namespace CafeGuide
                     using (SqlDataAdapter adapter = new SqlDataAdapter(command))
                     {
                         adapter.Fill(ResultList.dt);
-                        //dataGrid_Results.ItemsSource = dt.DefaultView;
                     }
                 }
             }

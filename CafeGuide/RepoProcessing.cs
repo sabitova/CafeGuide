@@ -8,8 +8,11 @@ namespace CafeGuide
 {
     public class RepoProcessing : IProcessing
     {
-        public List<Cafe> Cafes = new List<Cafe>();
+        public List<Cafe> cafes = new List<Cafe>();
         public List<Cuisine> cuisines = new List<Cuisine>();
+        public List<Type> types = new List<Type>();
+
+        public List<Cafe> suitableCafes;
 
         public void AddEntities()
         {
@@ -39,6 +42,14 @@ namespace CafeGuide
                 Text = "Pokrovka ul., d. 19",
                 Lat = "55.759794",
                 Long = "37.646223899999995"
+            };
+
+            var address3 = new Address
+            {
+                Id = 3,
+                Text = "Krasnaya pl., d. 1",
+                Lat = "55.7537523",
+                Long = "37.62251679999997"
             };
 
             var eu = new Cuisine
@@ -79,27 +90,29 @@ namespace CafeGuide
             cuisines.Add(eu);
             cuisines.Add(it);
 
-            Cafes.Add(Cafe1);
-            Cafes.Add(Cafe2);
+            types.Add(anticafe);
+            types.Add(bar);
+
+            cafes.Add(Cafe1);
+            cafes.Add(Cafe2);
         }
 
         public void GetSuitableCafes(int time, string type, string cuisine, int avgCheck, bool wi_fi)
         {
+            suitableCafes = cafes.Where(c => c.Cuisine.Contains(cuisines.FirstOrDefault(cu => cu.Name == cuisine)))
+                                 .Where(c => c.Type.Name == type)
+                                 .Where(c => c.Time <= time)
+                                 .Where(c => c.CheckAvg <= avgCheck)
+                                 .Where(c => wi_fi)
+                                 .ToList();
+        }
 
-            //var address3 = new Address
-            //{
-            //    Id = 3,
-            //    Text = "Krasnaya pl., d. 1",
-            //    Lat = "55.7537523",
-            //    Long = "37.62251679999997"
-            //};
-            List<Cafe> suca = Cafes.Where(c => c.Cuisine.Contains(cuisines.FirstOrDefault(cu => cu.Name == cuisine))).ToList();
-            var SuitableCafes = new List<Cafe>();
-            foreach (var cafe in Cafes)
+        public void GetTimeForAllCafes(Address from, string mode)
+        {
+            foreach (var c in cafes)
             {
-                
+                c.Time = APIDirection.GetTime(from, c.Address, mode);
             }
-
         }
     }
 }

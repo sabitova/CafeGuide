@@ -19,16 +19,15 @@ namespace CafeGuide
     /// </summary>
     public partial class StartWindow : Window
     {
-        RepoProcessing RP = new RepoProcessing();
-        DBProcessing DBP = new DBProcessing();
+        IProcessing RP = new RepoProcessing();
+        IProcessing DBP = new DBProcessing();
+
         public static Address location = new Address();
 
         public StartWindow()
         {
             InitializeComponent();
           
-            
-
         }
 
         private void button_Car_Click(object sender, RoutedEventArgs e)

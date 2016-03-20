@@ -13,6 +13,6 @@
             <ColumnDefinition Width="7*"/>
             <ColumnDefinition Width="510*"/>
         </Grid.ColumnDefinitions>
-        <DataGrid x:Name="dataGrid_Results" HorizontalAlignment="Left" Margin="7,10,0,0" VerticalAlignment="Top" Height="301" Width="501" Grid.ColumnSpan="2"/>
+        <DataGrid x:Name="dataGrid_Results" IsReadOnly="True" HorizontalAlignment="Left" Margin="7,10,0,0" VerticalAlignment="Top" Height="301" Width="501" Grid.ColumnSpan="2"/>
     </Grid>
 </Window>

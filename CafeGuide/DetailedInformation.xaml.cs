@@ -25,7 +25,7 @@ namespace CafeGuide
         {
             InitializeComponent();
 
-           string name= ResultList.selectedName;
+            string name= ResultList.selectedName;
             Cafe cafe = ShowInfo(name);
             //ПЕРЕДАЙТЬ PLACE ID
             selectedCafeInfo = APIPlaces.GetPlaceInfo("");
