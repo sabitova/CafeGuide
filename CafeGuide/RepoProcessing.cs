@@ -83,7 +83,7 @@ namespace CafeGuide
             Cafes.Add(Cafe2);
         }
 
-        public List<Cafe> GetSuitableCafes(int time, string type, string cuisine, int avgCheck, bool wi_fi)
+        public void GetSuitableCafes(int time, string type, string cuisine, int avgCheck, bool wi_fi)
         {
 
             //var address3 = new Address
@@ -100,8 +100,6 @@ namespace CafeGuide
                 
             }
 
-
-            return SuitableCafes;
         }
     }
 }

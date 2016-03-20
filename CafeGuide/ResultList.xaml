@@ -13,14 +13,6 @@
             <ColumnDefinition Width="7*"/>
             <ColumnDefinition Width="510*"/>
         </Grid.ColumnDefinitions>
-        <DataGrid x:Name="dataGrid_Results" Grid.Column="1" AutoGenerateColumns="False" IsReadOnly="True" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top" Height="284" Width="480"  FontFamily="Segoe Print" Foreground="#FF151313" BorderBrush="Black" SelectionChanged="dataGrid_Results_SelectionChanged" Background="{x:Null}">
-            <!--<DataGrid.Columns>
-                <DataGridTextColumn Header="Name" ></DataGridTextColumn>
-                <DataGridTextColumn Header="Address"></DataGridTextColumn>
-                <DataGridTextColumn Header="Type" ></DataGridTextColumn>
-                <DataGridTextColumn Header="Time" ></DataGridTextColumn>
-
-            </DataGrid.Columns>-->
-        </DataGrid>
+        <DataGrid x:Name="dataGrid_Results" HorizontalAlignment="Left" Margin="7,10,0,0" VerticalAlignment="Top" Height="301" Width="501" Grid.ColumnSpan="2"/>
     </Grid>
 </Window>

@@ -37,8 +37,9 @@ namespace CafeGuide
             {
                 ResultList showResults = new ResultList(comboBoxType.Text, comboBoxCuisine.Text,
                     textBoxAverageCheck.Text == "" ? 0 : Convert.ToInt32(textBoxAverageCheck.Text),
-                    textBoxAverageCheck.Text == "" ? 0 : Convert.ToInt32(textBoxTime.Text), 
+                    textBoxAverageCheck.Text == "" ? 0 : Convert.ToInt32(textBoxTime.Text),
                     checkBoxWiFi.IsChecked.Value);
+
                 showResults.ShowDialog();
             }
 

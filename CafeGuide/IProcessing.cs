@@ -8,7 +8,7 @@ namespace CafeGuide
 {
     interface IProcessing
     {
-        List<Cafe> GetSuitableCafes(int time, string type, string cuisine, int avgCheck, bool wi_fi);
+        void GetSuitableCafes(int time, string type, string cuisine, int avgCheck, bool wi_fi);
         
     }
 }
