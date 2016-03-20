@@ -22,11 +22,11 @@ namespace CafeGuide
     {
         //Uncomment one of the lines depending on what you want to work with (Repo or DB)
 
-        //public static IProcessing processingObject = new RepoProcessing();
-        public static IProcessing processingObject = new DBProcessing();
+        public static IProcessing processingObject = new RepoProcessing();
+        //public static IProcessing processingObject = new DBProcessing();
 
         public static Address location = new Address();
-        public static Task slowTask = null;
+        public static Task slowTask;
 
         public StartWindow()
         {
@@ -41,30 +41,33 @@ namespace CafeGuide
 
             location.Text = "Moscow," + textBox_Street.Text + "," + textBox_House.Text;
 
-            try
-            {
-                switch (buttonText)
+           // try
+            //{
+               switch (buttonText)
                 {
-                    case "Car":
+                    case "By car":
+                        //processingObject.GetTimeForAllCafes(location, "driving");
                         //slowTask = Task.Factory.StartNew(() => processingObject.GetTimeForAllCafes(location, "driving"));
                         slowTask = Task.Factory.StartNew(() => SlowDude());
                         break;
-                    case "On Foot":
+                    case "On foot":
+                        processingObject.GetTimeForAllCafes(location, "walking");
                         slowTask = Task.Factory.StartNew(() => processingObject.GetTimeForAllCafes(location, "walking"));
                         break;
-                    case "Public Transport":
+                    case "By public Transport":
+                        processingObject.GetTimeForAllCafes(location, "transit");
                         slowTask = Task.Factory.StartNew(() => processingObject.GetTimeForAllCafes(location, "transit"));
                         break;
                 }
 
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.ShowDialog();
-            }
+            //}
 
-            catch (Exception ex)
-            {
-                MessageBox.Show("Invalid input!", "Error");
-            }
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
         }
 
         // удалить!

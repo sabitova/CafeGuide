@@ -116,21 +116,17 @@ namespace CafeGuide
         {
             var suitableCuisine = cuisines.Where(cu => cu.Name == cuisine).FirstOrDefault();
             var suitableCafes = cafes.Where(c => c.Cuisine.Contains(suitableCuisine)).ToList();
-            //.Where(c => c.Type.Name == type)
-            //.Where(c => c.Time <= time)
-            //.Where(c => c.CheckAvg <= avgCheck)
-            //.Where(c => c.WiFi == wi_fi || true)
-            //.ToList();
+
             var suitableCafes2 = suitableCafes.Where(c => c.Type.Name == type).ToList();
-            var suca3 = suitableCafes2.Where(c => c.Time <= time).ToList();
-            var suca4 = suca3.Where(c => c.CheckAvg <= avgCheck).ToList();
-            var suca5 = suca4.Where(c => c.WiFi == wi_fi || true).ToList();
+            var suitableCafes3 = suitableCafes2.Where(c => c.Time <= time).ToList();
+            var suitableCafes4 = suitableCafes3.Where(c => c.CheckAvg <= avgCheck).ToList();
+            var suitableCafes5 = suitableCafes4.Where(c => c.WiFi == wi_fi || true).ToList();
 
             ResultList.dt.Columns.Add("Name");
             ResultList.dt.Columns.Add("Time (min)");
             ResultList.dt.Columns.Add("Average Check (rub)");
 
-            foreach (var item in suca5)
+            foreach (var item in suitableCafes5)
             {
                 var row = ResultList.dt.NewRow();
 
