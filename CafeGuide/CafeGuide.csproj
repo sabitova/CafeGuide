@@ -88,9 +88,6 @@
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Map.xaml.cs">
-      <DependentUpon>Map.xaml</DependentUpon>
-    </Compile>
     <Compile Include="RepoProcessing.cs" />
     <Compile Include="ResultList.xaml.cs">
       <DependentUpon>ResultList.xaml</DependentUpon>
@@ -115,7 +112,6 @@
     <Compile Include="DTO\Legs.cs" />
     <Compile Include="DTO\Response.cs" />
     <Compile Include="DTO\Routes.cs" />
-    <Compile Include="WorkWithImages.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -164,10 +160,6 @@
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Map.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ResultList.xaml">
       <Generator>MSBuild:Compile</Generator>
