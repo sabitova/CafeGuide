@@ -19,12 +19,12 @@ namespace CafeGuide
     /// </summary>
     public partial class Reviews : Window
     {
-        public Reviews()
+        public Reviews(string name)
         {
             InitializeComponent();
 
-            labelName.Content = DetailedInformation.selectedCafeInfo.Name;
-            
+            labelName.Content = "Reviews";
+            listBoxReviews.MaxWidth = double.Parse("400");
             for (int i=0; i < DetailedInformation.selectedCafeInfo.Reviews.Count; i++)
             {
                 listBoxReviews.Items.Add("Author: " + DetailedInformation.selectedCafeInfo.Authors[i]);

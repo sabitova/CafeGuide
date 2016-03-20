@@ -20,7 +20,7 @@
             <ColumnDefinition Width="5*"/>
             <ColumnDefinition Width="357*"/>
         </Grid.ColumnDefinitions>
-        <ListBox x:Name="listBoxReviews" MaxWidth="482" HorizontalAlignment="Left" Height="289" Margin="3,10,0,0" VerticalAlignment="Top" Width="482" Grid.Column="1" Grid.Row="2" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Maiandra GD" FontSize="13.333" Foreground="#FFFDF4BF"/>
+        <ListBox x:Name="listBoxReviews" HorizontalAlignment="Left" Height="289" Margin="3,10,0,0" VerticalAlignment="Top" Width="482" Grid.Column="1" Grid.Row="2" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Maiandra GD" FontSize="13.333" Foreground="#FFFDF4BF"/>
         <Label x:Name="labelName" Content="" HorizontalAlignment="Left" Margin="93,0,0,0" VerticalAlignment="Top" Width="308" FontFamily="Imprint MT Shadow" FontSize="26.667" Grid.Column="1" Height="40" Grid.Row="1" Foreground="#FFFDF4BF"/>
 
     </Grid>

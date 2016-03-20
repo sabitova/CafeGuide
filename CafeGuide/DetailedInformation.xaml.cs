@@ -34,11 +34,11 @@ namespace CafeGuide
             selectedCafeInfo = APIPlaces.GetPlaceInfo(place_id);
             info = StartWindow.processingObject.GetPlaceInfo(place_id);
 
-            textBlock_Name.Text = "Name: " + info[0].ToString();
-            textBlock_Address.Text = "Address: " + info[1].ToString();
+            textBlock_Name.Text = info[0].ToString();
+            textBlock_Address.Text = info[1].ToString();
             textBlock_AverageCheck.Text = "Average Check: " + info[2].ToString();
 
-            textBlock_Type.Text = "Type: " + info[4].ToString();
+            textBlock_Type.Text = info[4].ToString();
             textBlock_OpeningHours.Text = "Opening Hours: " + info[5].ToString() + "-" + info[6].ToString();
             
             if ((Boolean)info[7]== true)
@@ -57,7 +57,7 @@ namespace CafeGuide
 
         private void buttonShowReviews_Click(object sender, RoutedEventArgs e)
         {
-            Reviews reviews = new Reviews();
+            Reviews reviews = new Reviews(selectedCafeInfo.Name);
             reviews.ShowDialog();
         }
 

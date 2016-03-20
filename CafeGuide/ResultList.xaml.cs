@@ -33,7 +33,7 @@ namespace CafeGuide
             StartWindow.processingObject.GetSuitableCafes(time, type, cuisine, avgCheck, wifi);
 
             dataGrid_Results.ItemsSource = dt.DefaultView;
-            dataGrid_Results.ColumnWidth = 164;
+            dataGrid_Results.ColumnWidth = 162;
         }
 
         public ResultList()
