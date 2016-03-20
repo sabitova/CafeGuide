@@ -49,6 +49,8 @@ namespace CafeGuide
             textBlock_Website.Text = "Website: " + info[8] ?? ToString();
             textBlock_Phone.Text = "Phone number: " + info[9] ?? ToString();
 
+            labelRating.Content = selectedCafeInfo.Rating;
+
             ShowMap(StartWindow.processingObject.GetLat(place_id), StartWindow.processingObject.GetLong(place_id), StartWindow.location.Text);
 
         }

@@ -5,16 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CafeGuide"
         mc:Ignorable="d"
-        Title="Result" MaxHeight="350" MaxWidth="525" Height="350" Width="525">
-    <Grid>
+        Title="Result"  MaxHeight="400" MaxWidth="510" Height="400" Width="510">
+    <Grid Opacity="0.8">
+        <Grid.Background>
+            <ImageBrush ImageSource="Resources/красный.jpg"/>
+        </Grid.Background>
 
 
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="7*"/>
-            <ColumnDefinition Width="510*"/>
+            <ColumnDefinition Width="488*"/>
+            <ColumnDefinition Width="7*"/>
         </Grid.ColumnDefinitions>
-        <DataGrid x:Name="dataGrid_Results" HorizontalAlignment="Left" Margin="3,8,0,0" VerticalAlignment="Top" Height="301" Width="500" FontFamily="Segoe UI Semilight" FontSize="13.333" IsReadOnly="True" SelectionChanged="dataGrid_Results_SelectionChanged_1" Grid.Column="1" Background="{x:Null}" BorderBrush="{x:Null}"/>
+        <DataGrid x:Name="dataGrid_Results" HorizontalAlignment="Left" Margin="3,10,0,0" VerticalAlignment="Top" Height="315" Width="482" FontFamily="Maiandra GD" FontSize="13.333" IsReadOnly="True" SelectionChanged="dataGrid_Results_SelectionChanged_1" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFFDF4BF" Grid.Column="1"/>
 
     </Grid>
 </Window>
