@@ -7,9 +7,7 @@
         mc:Ignorable="d"
         Title="Reviews" MaxHeight="400" MaxWidth="370" Height="400" Width="370">
     <Grid>
-        <Grid.Background>
-            <ImageBrush ImageSource="Resources/siteBackground.jpg"/>
-        </Grid.Background>
+
         <Grid.RowDefinitions>
             <RowDefinition Height="15*"/>
             <RowDefinition Height="50*"/>
