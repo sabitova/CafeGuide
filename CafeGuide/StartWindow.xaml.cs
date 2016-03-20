@@ -54,18 +54,15 @@ namespace CafeGuide
 
             try
             { 
-                switch (buttonText)
-                {
-                    case "By car":
+                if(buttonText == "By car")
                        slowTask = Task.Factory.StartNew(() => processingObject.GetTimeForAllCafes(location, "driving"));                        
-                        break;
-                    case "On foot":
+
+                if(buttonText == "On foot")
                         slowTask = Task.Factory.StartNew(() => processingObject.GetTimeForAllCafes(location, "walking"));
-                        break;
-                    case "By public transport":
-                        slowTask = Task.Factory.StartNew(() => processingObject.GetTimeForAllCafes(location, "transit"));
-                        break;
-                }
+
+                else
+                     slowTask = Task.Factory.StartNew(() => processingObject.GetTimeForAllCafes(location, "transit"));
+                
 
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.ShowDialog();

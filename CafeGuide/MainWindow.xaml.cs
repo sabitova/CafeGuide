@@ -66,7 +66,6 @@ namespace CafeGuide
 
         void LoadCombo(string sqlQueryString, ComboBox comboBox)
         {
-            // try {
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
@@ -81,12 +80,6 @@ namespace CafeGuide
                     }
                 }
             }
-            // }
-
-            //catch (Exception e)
-            //{
-            //    MessageBox.Show(e.Message, "Error");
-            // }
         }
 
         private async void button_Click(object sender, RoutedEventArgs e)
