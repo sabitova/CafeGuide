@@ -75,7 +75,7 @@ namespace CafeGuide
             //        }
             //    }
             //}
-           
+
             //DataGridTextColumn c1 = new DataGridTextColumn();
             //c1.Header = "Name";
             //c1.Binding = new Binding("Name");
@@ -99,9 +99,40 @@ namespace CafeGuide
             ////    dataGrid_Results.Items.Add(new Item { Name = c.Name, AvgCheck = c.CheckAvg});
             ////}
 
+
+            //dataGrid_Results.Columns[0].Width = 300;
+            //dataGrid_Results.Columns[1].Width = 100;
+            //dataGrid_Results.Columns[2].Width = 100;
+
         }
 
+        private void Size()
+        {
+            double columnWidth = 0;
+            foreach (DataGridColumn dgc in this.dataGrid_Results.Columns)
+                columnWidth += dgc.ActualWidth;
+
+            this.dataGrid_Results.Columns[2].Width = this.dataGrid_Results.ActualWidth - columnWidth + this.dataGrid_Results.Columns[2].ActualWidth - 8;
+        }
+
+        private void dataGrid_Results_Loaded(object sender, RoutedEventArgs e)
+        {
+            Size();
+        }
+
+        private void ataGrid_Results_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            Size();
+        }
         private void dataGrid_Results_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            selectedItem = dataGrid_Results.SelectedItem as Item;
+            selectedName = selectedItem.Name;
+            DetailedInformation info = new DetailedInformation();
+            info.ShowDialog();
+        }
+
+        private void dataGrid_Results_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
         {
             selectedItem = dataGrid_Results.SelectedItem as Item;
             selectedName = selectedItem.Name;
