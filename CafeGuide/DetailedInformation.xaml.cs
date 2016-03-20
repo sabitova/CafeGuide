@@ -23,7 +23,6 @@ namespace CafeGuide
         public static APIPlaces.Place selectedCafeInfo;
         public ArrayList info = new ArrayList();
         DBProcessing dbp = new DBProcessing();
-        public string placeID;
 
         public DetailedInformation(string place_id)
         {
@@ -31,14 +30,9 @@ namespace CafeGuide
 
             //string name= ResultList.selectedName;
             //Cafe cafe = ShowInfo(name);
-            placeID = place_id;
 
             selectedCafeInfo = APIPlaces.GetPlaceInfo(place_id);
             info = dbp.GetPlaceInfo(place_id);
-
-            ShowImage(photo1, string.Format(@"https://maps.googleapis.com/maps/api/place/photo?photoreference={0}=AIzaSyCVQZ77qOQBuvlNskkPKYaBU63_l-5B0Us", selectedCafeInfo.PhotoID[0]));
-            ShowImage(photo2, string.Format(@"https://maps.googleapis.com/maps/api/place/photo?photoreference={0}=AAIzaSyCVQZ77qOQBuvlNskkPKYaBU63_l-5B0Us", selectedCafeInfo.PhotoID[1]));
-            ShowImage(photo3, string.Format(@"https://maps.googleapis.com/maps/api/place/photo?photoreference={0}=AIzaSyCVQZ77qOQBuvlNskkPKYaBU63_l-5B0Us", selectedCafeInfo.PhotoID[2]));
 
             textBlock_Name.Text = "Name: " + info[0].ToString();
             textBlock_Address.Text = "Address: " + info[1].ToString();
@@ -52,6 +46,8 @@ namespace CafeGuide
             }
             textBlock_Website.Text = "Website: " + info[8].ToString();
             textBlock_Phone.Text = "Phone number: " + info[9].ToString();
+
+            ShowMap(dbp.GetLat(place_id), dbp.GetLong(place_id), StartWindow.location.Text);
 
             //textBlock_Name.Text = cafe.Name;
             //textBlock_Address.Text = cafe.Address.Text;
@@ -68,7 +64,7 @@ namespace CafeGuide
 
         }
 
-        public Cafe ShowInfo(string name)
+        public static Cafe ShowInfo(string name)
         {
             ResultList result = new ResultList();
             List<Cafe> suitableCafes = result.suitableCafes;
@@ -84,20 +80,14 @@ namespace CafeGuide
             return selectedCafe;
 
         }
-
-        private void buttonShowMap_Click(object sender, RoutedEventArgs e)
-        {
-            Map map = new Map(placeID);
-            map.ShowDialog();
-        }
-
+     
         private void buttonShowReviews_Click(object sender, RoutedEventArgs e)
         {
             Reviews reviews = new Reviews();
             reviews.ShowDialog();
         }
 
-        public static void ShowImage(Image image, string path)
+        public void ShowImage(Image image, string path)
         {
             BitmapImage bi = new BitmapImage();
             bi.BeginInit();
@@ -106,6 +96,16 @@ namespace CafeGuide
             image.Stretch = Stretch.Fill;
             image.Source = bi;
 
+        }
+        public void ShowMap(string lat, string lon, string address)
+        {
+            BitmapImage bi = new BitmapImage();
+            bi.BeginInit();
+            bi.UriSource = new Uri(string.Format(@"https://maps.googleapis.com/maps/api/staticmap?center={0},{1}&zoom=13&size=400x400&markers=color:red%7Clabel:S%7C{0},{1}&markers=color:blue%7Clabel:S%7C{2}&key=%20AIzaSyDJW1i0dU5Fg0io0F2qTG4fTRdyP81b04I", lat, lon, address), UriKind.RelativeOrAbsolute);
+            bi.EndInit();
+            imageMap.Stretch = Stretch.Fill;
+            imageMap.Source = bi;
+            
         }
     }
 
