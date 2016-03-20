@@ -22,7 +22,7 @@ namespace CafeGuide
 
     public partial class MainWindow : Window
     {
-        public static string ConnectionString = "Data Source = DESKTOP-tmq0bt1; Initial Catalog = CafesDB; Integrated Security = True";
+        public static string ConnectionString = "Data Source = DESKTOP-re0aosg; Initial Catalog = CafesDB; Integrated Security = True";
 
         public MainWindow()
         {
@@ -94,7 +94,11 @@ namespace CafeGuide
             Cursor = Cursors.Wait;
             await StartWindow.slowTask;
             Cursor = Cursors.Arrow;
-            StartWindow.processingObject.FindCafeByName(textBoxName.Text);
+
+            if (textBoxName.Text == "")
+                MessageBox.Show("Please enter a proper name");
+            else
+                StartWindow.processingObject.FindCafeByName(textBoxName.Text);
         }
     }
 }
