@@ -14,3 +14,5 @@ The functionality for repositories may be tested by commenting/uncommenting
 highlighted lines in the StartWindow.xaml.cs class.
 
 Good luck! 
+
+P.S. In case the db doesn't work please use CafeDB(1)
