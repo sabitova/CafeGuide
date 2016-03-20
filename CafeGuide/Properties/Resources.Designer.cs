@@ -103,6 +103,26 @@ namespace CafeGuide.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap luxfon_com_6170 {
+            get {
+                object obj = ResourceManager.GetObject("luxfon_com_6170", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap photo1561 {
+            get {
+                object obj = ResourceManager.GetObject("photo1561", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap search_ideogram {
             get {
                 object obj = ResourceManager.GetObject("search_ideogram", resourceCulture);
@@ -123,9 +143,29 @@ namespace CafeGuide.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap tekstury_fon_krasnyy_dlya_rabochego_stola_uzory_2560x1600 {
+            get {
+                object obj = ResourceManager.GetObject("tekstury_fon_krasnyy_dlya_rabochego_stola_uzory_2560x1600", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap wifi {
             get {
                 object obj = ResourceManager.GetObject("wifi", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap красный {
+            get {
+                object obj = ResourceManager.GetObject("красный", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

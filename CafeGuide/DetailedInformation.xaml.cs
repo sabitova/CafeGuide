@@ -37,13 +37,15 @@ namespace CafeGuide
             textBlock_Name.Text = "Name: " + info[0].ToString();
             textBlock_Address.Text = "Address: " + info[1].ToString();
             textBlock_AverageCheck.Text = "Average Check: " + info[2].ToString();
-            
+
             textBlock_Type.Text = "Type: " + info[4].ToString();
             textBlock_OpeningHours.Text = "Opening Hours: " + info[5].ToString() + "-" + info[6].ToString();
-            if (info[7].ToString() == "1")
+            
+            if ((Boolean)info[7]== true)
             {
                 ShowImage(imageWiFi, "Resources/1024px-11wifi.png");
             }
+
             textBlock_Website.Text = "Website: " + info[8] ?? ToString();
             textBlock_Phone.Text = "Phone number: " + info[9] ?? ToString();
 

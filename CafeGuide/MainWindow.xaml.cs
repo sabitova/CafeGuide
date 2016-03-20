@@ -22,7 +22,7 @@ namespace CafeGuide
 
     public partial class MainWindow : Window
     {
-        public string ConnectionString = "Data Source = DESKTOP-RE0AOSG; Initial Catalog = CafesDB; Integrated Security = True";
+        public static string ConnectionString = "Data Source = DESKTOP-tmq0bt1; Initial Catalog = CafesDB; Integrated Security = True";
 
         public MainWindow()
         {

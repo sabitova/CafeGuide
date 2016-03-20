@@ -11,7 +11,7 @@ namespace CafeGuide
 {
     public class DBProcessing : IProcessing
     {
-        public string ConnectionString = "Data Source = DESKTOP-RE0AOSG; Initial Catalog = CafesDB; Integrated Security = True";
+        public string ConnectionString = MainWindow.ConnectionString;
 
         public void GetSuitableCafes(int time, string type, string cuisine, int avgCheck, bool wifi)
         {
