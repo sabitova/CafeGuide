@@ -35,7 +35,7 @@ namespace CafeGuide
 
         private async void buttonSearch_Click(object sender, RoutedEventArgs e)
         {
-            Cursor = Cursors.Wait;            
+            Cursor = Cursors.Wait;
             await StartWindow.slowTask;
             Cursor = Cursors.Arrow;
             try
