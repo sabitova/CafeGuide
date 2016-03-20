@@ -25,7 +25,6 @@ namespace CafeGuide
 
             labelName.Content = DetailedInformation.selectedCafeInfo.Name;
             
-            
             for (int i=0; i < DetailedInformation.selectedCafeInfo.Reviews.Count; i++)
             {
                 listBoxReviews.Items.Add("Author: " + DetailedInformation.selectedCafeInfo.Authors[i]);

@@ -57,8 +57,8 @@ namespace CafeGuide
                 switch (buttonText)
                 {
                     case "By car":
-                        //slowTask = Task.Factory.StartNew(() => processingObject.GetTimeForAllCafes(location, "driving"));
-                        slowTask = Task.Factory.StartNew(() => SlowDude());
+                       slowTask = Task.Factory.StartNew(() => processingObject.GetTimeForAllCafes(location, "driving"));
+                        
                         break;
                     case "On foot":
                         slowTask = Task.Factory.StartNew(() => processingObject.GetTimeForAllCafes(location, "walking"));
@@ -78,12 +78,6 @@ namespace CafeGuide
             }
         }
 
-        // удалить!
-        private void SlowDude()
-        {
-            Thread.Sleep(5000);
-            MessageBox.Show("Ta-dam! Here I am!");
-        }
 
     }
 }
