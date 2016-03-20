@@ -24,36 +24,20 @@ namespace CafeGuide
         public string ConnectionString = "Data Source = DESKTOP-RE0AOSG; Initial Catalog = CafesDB; Integrated Security = True";
 
         IProcessing processingObj = new DBProcessing();
-        public List<Cafe> suitableCafes;
-        public Item selectedItem;
-        public static string selectedName;
-        public static DataTable dt = new DataTable();
+        DBProcessing dbp = new DBProcessing(); // поменять
 
-        public string Type { get; set; }
-        public string Cuisine { get; set; }
-        public int AvgCheck { get; set; }
-        public int Time { get; set; }
-        public bool WiFi { get; set; }
+        public List<Cafe> suitableCafes;
+        public static DataTable dt = new DataTable();
 
         public ResultList(string type, string cuisine, int avgCheck, int time, bool wifi)
         {
-            //Type = type;
-            //Cuisine = cuisine;
-            //AvgCheck = avgCheck;
-            //Time = time;
-            //WiFi = wifi;
 
             InitializeComponent();
 
             processingObj.GetSuitableCafes(time, type, cuisine, avgCheck, wifi);
+            
             dataGrid_Results.ItemsSource = dt.DefaultView;
-        }
-
-        public class Item
-        { 
-            public string Name { get; set; }
-            public int Time { get; set; }
-            public double AvgCheck { get; set; }
+            dataGrid_Results.ColumnWidth = 164;
         }
 
         public ResultList()
@@ -106,37 +90,12 @@ namespace CafeGuide
 
         }
 
-        private void Size()
-        {
-            double columnWidth = 0;
-            foreach (DataGridColumn dgc in this.dataGrid_Results.Columns)
-                columnWidth += dgc.ActualWidth;
-
-            this.dataGrid_Results.Columns[2].Width = this.dataGrid_Results.ActualWidth - columnWidth + this.dataGrid_Results.Columns[2].ActualWidth - 8;
-        }
-
-        private void dataGrid_Results_Loaded(object sender, RoutedEventArgs e)
-        {
-            Size();
-        }
-
-        private void ataGrid_Results_SizeChanged(object sender, SizeChangedEventArgs e)
-        {
-            Size();
-        }
-        private void dataGrid_Results_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            selectedItem = dataGrid_Results.SelectedItem as Item;
-            selectedName = selectedItem.Name;
-            DetailedInformation info = new DetailedInformation();
-            info.ShowDialog();
-        }
-
         private void dataGrid_Results_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
         {
-            selectedItem = dataGrid_Results.SelectedItem as Item;
-            selectedName = selectedItem.Name;
-            DetailedInformation info = new DetailedInformation();
+            DataRowView rowview = dataGrid_Results.SelectedItem as DataRowView;
+            string name = rowview.Row[0].ToString();
+            string placeid = dbp.GetPlaceId(name);
+            DetailedInformation info = new DetailedInformation(placeid);
             info.ShowDialog();
         }
     }
