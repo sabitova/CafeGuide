@@ -22,7 +22,7 @@ namespace CafeGuide
     {
         //Uncomment one of the lines depending on what you want to work with (Repo or DB)
 
-       // public static IProcessing processingObject = new RepoProcessing();
+       //public static IProcessing processingObject = new RepoProcessing();
         public static IProcessing processingObject = new DBProcessing();
 
         public static Address location = new Address();
@@ -54,19 +54,15 @@ namespace CafeGuide
 
             try
             { 
-                switch (buttonText)
-                {
-                    case "By car":
-                       slowTask = Task.Factory.StartNew(() => processingObject.GetTimeForAllCafes(location, "driving"));
-                        
-                        break;
-                    case "On foot":
+                if(buttonText == "By car")
+                       slowTask = Task.Factory.StartNew(() => processingObject.GetTimeForAllCafes(location, "driving"));                        
+
+                if(buttonText == "On foot")
                         slowTask = Task.Factory.StartNew(() => processingObject.GetTimeForAllCafes(location, "walking"));
-                        break;
-                    case "By public transport":
-                        slowTask = Task.Factory.StartNew(() => processingObject.GetTimeForAllCafes(location, "transit"));
-                        break;
-                }
+
+                else
+                     slowTask = Task.Factory.StartNew(() => processingObject.GetTimeForAllCafes(location, "transit"));
+                
 
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.ShowDialog();

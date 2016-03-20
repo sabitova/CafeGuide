@@ -21,8 +21,6 @@ namespace CafeGuide
     /// </summary>
     public partial class ResultList : Window
     {
-        public string ConnectionString = "Data Source = DESKTOP-RE0AOSG; Initial Catalog = CafesDB; Integrated Security = True";
-
         public List<Cafe> suitableCafes;
         public static DataTable dt = new DataTable();
 
@@ -30,25 +28,38 @@ namespace CafeGuide
         {
             InitializeComponent();
 
-            StartWindow.processingObject.GetSuitableCafes(time, type, cuisine, avgCheck, wifi);
+            try
+            {
+                StartWindow.processingObject.GetSuitableCafes(time, type, cuisine, avgCheck, wifi);
 
-            dataGrid_Results.ItemsSource = dt.DefaultView;
-            dataGrid_Results.ColumnWidth = 162;
-        }
+                if (dt.Rows.Count == 0)
+                    MessageBox.Show("Nothing found :{");
 
-        public ResultList()
-        {
-            InitializeComponent();
+                dataGrid_Results.ItemsSource = dt.DefaultView;
+                dataGrid_Results.ColumnWidth = 164;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
         }
 
         private void dataGrid_Results_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
         {
-            DataRowView rowview = dataGrid_Results.SelectedItem as DataRowView;
-            string name = rowview.Row[0].ToString();
-            string placeid = StartWindow.processingObject.GetPlaceId(name);
-            DetailedInformation info = new DetailedInformation(placeid);
+            try {
+                DataRowView rowview = dataGrid_Results.SelectedItem as DataRowView;
+                string name = rowview.Row[0].ToString();
+                string placeid = StartWindow.processingObject.GetPlaceId(name);
+                DetailedInformation info = new DetailedInformation(placeid);
 
-            info.ShowDialog();
+                info.ShowDialog();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
         }
     }
 }
