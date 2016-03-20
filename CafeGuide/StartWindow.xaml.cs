@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -25,6 +26,7 @@ namespace CafeGuide
         public static IProcessing processingObject = new DBProcessing();
 
         public static Address location = new Address();
+        public static Task slowTask = null;
 
         public StartWindow()
         {
@@ -36,23 +38,41 @@ namespace CafeGuide
         private void button_Click(object sender, RoutedEventArgs e)
         {
             string buttonText = ((Button)sender).Content.ToString();
+
             location.Text = "Moscow," + textBox_Street.Text + "," + textBox_House.Text;
 
             switch (buttonText)
             {
                 case "Car":
-                    processingObject.GetTimeForAllCafes(location, "driving");
+                    //slowTask = Task.Factory.StartNew(() => processingObject.GetTimeForAllCafes(location, "driving"));
+                    slowTask = Task.Factory.StartNew(() => SlowDude());
                     break;
                 case "On Foot":
-                    processingObject.GetTimeForAllCafes(location, "walking");
+                    slowTask = Task.Factory.StartNew(() => processingObject.GetTimeForAllCafes(location, "walking"));
                     break;
                 case "Public Transport":
-                    processingObject.GetTimeForAllCafes(location, "transit");
+                    slowTask = Task.Factory.StartNew(() => processingObject.GetTimeForAllCafes(location, "transit"));
                     break;
             }
 
             MainWindow mainWindow = new MainWindow();
             mainWindow.ShowDialog();
+        }
+
+        // удалить!
+        private void SlowDude()
+        {
+            Thread.Sleep(5000);
+            MessageBox.Show("Ta-dam! Here I am!");
+        }
+
+        private void myTextBox_KeyPress(
+            
+            
+            object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != 8 && (e.KeyChar < 48 || e.KeyChar > 57))
+                e.Handled = true;
         }
     }
 }

@@ -193,7 +193,13 @@
     <Resource Include="Resources\siteBackground.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\353466-turquoise.jpg" />
+    <Resource Include="Resources\1024px-11wifi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Grungetexture610.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\375109293.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\luxfon.com-6170.jpg" />
