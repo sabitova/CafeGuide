@@ -60,6 +60,7 @@ namespace CafeGuide
                     }
                 }
             }
+
         }
 
         public void GetTimeForAllCafes(Address from, string mode)

@@ -61,6 +61,7 @@ namespace CafeGuide
             reviews.ShowDialog();
         }
 
+        // source: https://msdn.microsoft.com/ru-ru/library/system.windows.controls.image.source(v=vs.110).aspx
         public static void ShowImage(Image image, string path)
         {
             BitmapImage bi = new BitmapImage();
@@ -72,6 +73,7 @@ namespace CafeGuide
 
         }
 
+        // source: https://msdn.microsoft.com/ru-ru/library/system.windows.controls.image.source(v=vs.110).aspx
         public void ShowMap(string lat, string lon, string address)
         {
             BitmapImage bi = new BitmapImage();

@@ -10,12 +10,12 @@ namespace CafeGuide
 {
     public class RepoProcessing : IProcessing
     {
-        public List<Cafe> cafes;
-        public List<Cuisine> cuisines;
-        public List<Type> types;
-        public List<Address> addresses;
+        public List<Cafe> cafes { get; set; }
+        public List<Cuisine> cuisines { get; set; }
+        public List<Type> types { get; set; }
+        public List<Address> addresses { get; set; }
 
-        public List<Cafe> suitableCafes;
+        public List<Cafe> suitableCafes { get; set; }
 
         public void AddEntities()
         {
