@@ -11,33 +11,34 @@
             <ImageBrush ImageSource="Resources/красный.jpg"/>
         </Grid.Background>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="7*" />
-            <ColumnDefinition Width="493*"/>
+            <ColumnDefinition Width="77*" />
+            <ColumnDefinition Width="48*"/>
+            <ColumnDefinition Width="298*"/>
+            <ColumnDefinition Width="77*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="5*" />
-            <RowDefinition Height="50*"/>
-            <RowDefinition Height="25*"/>
-            <RowDefinition Height="40*" />
+            <RowDefinition Height="0*" />
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="45*" />
             <RowDefinition Height="25*"/>
             <RowDefinition Height="45*"/>
             <RowDefinition Height="50*"/>
-            <RowDefinition Height="40*" />
-            <RowDefinition Height="10*"/>
-            <RowDefinition Height="82*" />
+            <RowDefinition Height="50*" />
+            <RowDefinition Height="67*"/>
         </Grid.RowDefinitions>
 
-        <TextBox x:Name="textBoxName" Grid.Row="3" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="258" FontFamily="Maiandra GD" FontSize="13.333" BorderBrush="{x:Null}" Margin="120,20,0,0" Grid.Column="1" Background="#FFFDF4BF" Opacity="0.5" Grid.RowSpan="2"/>
-        <TextBox x:Name="textBoxAverageCheck" HorizontalAlignment="Left" Height="25" Margin="120,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135" FontFamily="Segoe Print" FontSize="13.333" Grid.Row="7" BorderBrush="{x:Null}" Grid.Column="1" Opacity="0.5" Background="#FFFDF4BF" Grid.RowSpan="2"/>
-        <CheckBox x:Name="checkBoxWiFi" Content="Wi-Fi" HorizontalAlignment="Left" Margin="419,0,0,0" VerticalAlignment="Top" Height="25" FontFamily="Maiandra GD" Width="54" Grid.Row="9" Grid.Column="1" RenderTransformOrigin="0.556,0.192" FontSize="13.333" Foreground="#FFFDF4BF"/>
-        <Button x:Name="buttonSearch" Content="SEARCH" HorizontalAlignment="Left" VerticalAlignment="Top" Width="88" Height="23" FontFamily="Maiandra GD" Background="#FFFDF4BF" Click="buttonSearch_Click" BorderBrush="White" Grid.Row="9" Grid.Column="1" Margin="93,49,0,0" FontSize="13.333" Foreground="#FF111110" Opacity="0.5"/>
-        <Label x:Name="label" Content="Cafe Guide" HorizontalAlignment="Left" VerticalAlignment="Top" Width="271" FontFamily="Imprint MT Shadow" FontSize="48" Height="57" Grid.Column="1" Margin="118,3,0,0" Foreground="#FFFDF4BF" Grid.RowSpan="3"/>
-        <Label x:Name="label1" Grid.Row="3" Content="Enter a name " HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="88" FontFamily="Maiandra GD" Grid.Column="1" Margin="118,0,0,0" FontSize="13.333" Foreground="#FFFDF4BF"/>
-        <Label x:Name="label2" Content="Type" HorizontalAlignment="Left" VerticalAlignment="Top" Width="42" FontFamily="Maiandra GD" Height="27" Grid.Row="5" Grid.Column="1" FontSize="13.333" Foreground="#FFFDF4BF" Margin="120,0,0,0"/>
-        <Label x:Name="label2_Copy" Content="Average Check" HorizontalAlignment="Left" VerticalAlignment="Top" Width="99" FontFamily="Maiandra GD" Height="26" Grid.Row="7" Grid.Column="1" Margin="120,0,0,0" FontSize="13.333" Foreground="#FFFDF4BF"/>
-        <Label x:Name="label3" Content="Cuisine" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Maiandra GD" Height="25" Width="55" Grid.Row="6" Grid.Column="1" Margin="120,0,0,0" Foreground="#FFFDF4BF" FontSize="13.333"/>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="268,20,0,0" Grid.Row="7" TextWrapping="Wrap" Text="rub" VerticalAlignment="Top" FontFamily="Maiandra GD" Grid.Column="1" Height="21" Width="21" Foreground="#FFFDF4BF" Grid.RowSpan="2"/>
-        <ComboBox x:Name="comboBoxType" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Top" Width="258" Height="25" FontFamily="Maiandra GD" FontSize="13.333" Margin="120,20,0,0" Opacity="0.5" BorderBrush="{x:Null}">
+        <TextBox x:Name="textBoxName" Grid.Row="3" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="258" FontFamily="Maiandra GD" FontSize="13.333" BorderBrush="{x:Null}" Margin="0,21,0,0" Grid.Column="2" Background="#FFFDF4BF" Opacity="0.5" Grid.RowSpan="2"/>
+        <TextBox x:Name="textBoxAverageCheck" HorizontalAlignment="Left" Height="25" Margin="0,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" FontFamily="Segoe Print" FontSize="13.333" Grid.Row="7" BorderBrush="{x:Null}" Grid.Column="2" Opacity="0.5" Background="#FFFDF4BF"/>
+        <CheckBox x:Name="checkBoxWiFi" Content="Wi-Fi" HorizontalAlignment="Left" Margin="204,20,0,0" VerticalAlignment="Top" Height="25" FontFamily="Maiandra GD" Width="54" Grid.Row="7" Grid.Column="2" RenderTransformOrigin="0.556,0.192" FontSize="13.333" Foreground="#FFFDF4BF" Background="#FFFDF4BF" Opacity="0.5"/>
+        <Button x:Name="buttonSearch" Content="SEARCH" HorizontalAlignment="Left" VerticalAlignment="Top" Width="88" Height="23" FontFamily="Maiandra GD" Background="#FFFDF4BF" Click="buttonSearch_Click" BorderBrush="White" Grid.Row="8" Grid.Column="2" Margin="170,26,0,0" FontSize="13.333" Foreground="#FF111110" Opacity="0.5"/>
+        <Label x:Name="label" Content="Cafe Guide" HorizontalAlignment="Left" VerticalAlignment="Top" Width="271" FontFamily="Imprint MT Shadow" FontSize="48" Height="57" Grid.Column="2" Foreground="#FFFDF4BF" Grid.RowSpan="2"/>
+        <Label x:Name="label1" Grid.Row="3" Content="Enter a name " HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="88" FontFamily="Maiandra GD" Grid.Column="2" FontSize="13.333" Foreground="#FFFDF4BF"/>
+        <Label x:Name="label2" Content="Type" HorizontalAlignment="Left" VerticalAlignment="Top" Width="42" FontFamily="Maiandra GD" Height="27" Grid.Row="5" Grid.Column="2" FontSize="13.333" Foreground="#FFFDF4BF"/>
+        <Label x:Name="label2_Copy" Content="Average Check" HorizontalAlignment="Left" VerticalAlignment="Top" Width="99" FontFamily="Maiandra GD" Height="26" Grid.Row="7" Grid.Column="2" FontSize="13.333" Foreground="#FFFDF4BF"/>
+        <Label x:Name="label3" Content="Cuisine" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Maiandra GD" Height="25" Width="55" Grid.Row="6" Grid.Column="2" Foreground="#FFFDF4BF" FontSize="13.333"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="130,24,0,0" Grid.Row="7" TextWrapping="Wrap" Text="rub" VerticalAlignment="Top" FontFamily="Maiandra GD" Grid.Column="2" Height="21" Width="21" Foreground="#FFFDF4BF"/>
+        <ComboBox x:Name="comboBoxType" Grid.Column="2" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Top" Width="258" Height="25" FontFamily="Maiandra GD" FontSize="13.333" Margin="0,20,0,0" Opacity="0.5" BorderBrush="{x:Null}" Foreground="#FF874542">
             <ComboBox.Background>
                 <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                     <GradientStop Color="#FFF0F0F0" Offset="0"/>
@@ -45,16 +46,16 @@
                 </LinearGradientBrush>
             </ComboBox.Background>
         </ComboBox>
-        <Button x:Name="button" Content="" UseLayoutRounding="True" Grid.Column="1" HorizontalAlignment="Left" Margin="393,20,0,0" Grid.Row="3" VerticalAlignment="Top" Width="40" Height="25" BorderBrush="{x:Null}" Foreground="{x:Null}" RenderTransformOrigin="0.175,0.4" Click="button_Click" Grid.RowSpan="2">
+        <Button x:Name="button" Content="" UseLayoutRounding="True" Grid.Column="2" HorizontalAlignment="Left" Margin="258,20,0,0" Grid.Row="3" VerticalAlignment="Top" Width="40" Height="25" BorderBrush="{x:Null}" Foreground="{x:Null}" RenderTransformOrigin="0.175,0.4" Click="button_Click" Opacity="0.8">
             <Button.Background>
                 <ImageBrush ImageSource="Resources/search-ideogram.png" Stretch="Uniform"  />
 
             </Button.Background>
         </Button>
-        <Label x:Name="label_time" Content="Time to get" HorizontalAlignment="Left" VerticalAlignment="Top" Width="90" FontFamily="Maiandra GD" Height="27" Grid.Row="9" FontSize="13.333" Foreground="#FFFDF4BF" Margin="288,10,0,0" Grid.Column="1"/>
-        <TextBox x:Name="textBoxTime" HorizontalAlignment="Left" Height="25" Margin="298,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135" FontFamily="Segoe Print" FontSize="13.333" Grid.Row="9" BorderBrush="{x:Null}" Opacity="0.5" Background="#FFFDF4BF" Grid.Column="1"/>
-        <TextBlock x:Name="textBlock_time" HorizontalAlignment="Left" Margin="213,37,0,0" Grid.Row="9" TextWrapping="Wrap" Text="min" VerticalAlignment="Top" FontFamily="Maiandra GD" Grid.Column="1" Height="21" Width="30" Foreground="#FFFDF4BF"/>
-        <ComboBox x:Name="comboBoxCuisine" Grid.Column="1" HorizontalAlignment="Left" Margin="120,25,0,0" Grid.Row="6" VerticalAlignment="Top" Width="258" Height="25" Opacity="0.5" BorderBrush="{x:Null}">
+        <Label x:Name="label_time" Content="Time to get" HorizontalAlignment="Left" VerticalAlignment="Top" Width="90" FontFamily="Maiandra GD" Height="27" Grid.Row="8" FontSize="13.333" Foreground="#FFFDF4BF" Grid.Column="2"/>
+        <TextBox x:Name="textBoxTime" HorizontalAlignment="Left" Height="25" Margin="0,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" FontFamily="Segoe Print" FontSize="13.333" Grid.Row="8" BorderBrush="{x:Null}" Opacity="0.5" Background="#FFFDF4BF" Grid.Column="2"/>
+        <TextBlock x:Name="textBlock_time" HorizontalAlignment="Left" Margin="130,31,0,0" Grid.Row="8" TextWrapping="Wrap" Text="min" VerticalAlignment="Top" FontFamily="Maiandra GD" Grid.Column="2" Height="21" Width="30" Foreground="#FFFDF4BF"/>
+        <ComboBox x:Name="comboBoxCuisine" Grid.Column="2" HorizontalAlignment="Left" Margin="0,25,0,0" Grid.Row="6" VerticalAlignment="Top" Width="258" Height="25" Opacity="0.5" BorderBrush="{x:Null}" Foreground="#FF874542">
             <ComboBox.Background>
                 <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                     <GradientStop Color="#FFF0F0F0" Offset="0"/>
@@ -62,7 +63,7 @@
                 </LinearGradientBrush>
             </ComboBox.Background>
         </ComboBox>
-        <Label x:Name="labelSearchby" Content="Search by parametres" Grid.Column="1" HorizontalAlignment="Left" Margin="152,1,0,0" Grid.Row="4" VerticalAlignment="Top" Height="34" Width="190" FontFamily="Maiandra GD" FontSize="18.667" Foreground="#FFFDF4BF" Grid.RowSpan="2"/>
-        <Label x:Name="labelSearchby_Copy" Content="Search by name" Grid.Column="1" HorizontalAlignment="Left" Margin="168,1,0,0" Grid.Row="2" VerticalAlignment="Top" Height="47" Width="151" FontFamily="Maiandra GD" FontSize="18.667" Foreground="#FFFDF4BF" Grid.RowSpan="2"/>
+        <Label x:Name="labelSearchby" Content="Search by parametres" Grid.Column="2" HorizontalAlignment="Left" Margin="30,1,0,0" Grid.Row="4" VerticalAlignment="Top" Height="34" Width="190" FontFamily="Maiandra GD" FontSize="18.667" Foreground="#FFFDF4BF" Grid.RowSpan="2"/>
+        <Label x:Name="labelSearchby_Copy" Content="Search by name" Grid.Column="2" HorizontalAlignment="Left" Margin="50,57,0,0" Grid.Row="1" VerticalAlignment="Top" Height="33" Width="151" FontFamily="Maiandra GD" FontSize="18.667" Foreground="#FFFDF4BF" Grid.RowSpan="2"/>
     </Grid>
 </Window>
