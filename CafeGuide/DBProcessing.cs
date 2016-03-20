@@ -285,5 +285,12 @@ namespace CafeGuide
 
             return info;
         }
+
+        public void FindCafeByName(string name)
+        {
+            string placeid = GetPlaceId(name);
+            DetailedInformation info = new DetailedInformation(placeid);
+            info.ShowDialog();
+        }
     }
 }
